@@ -25,6 +25,10 @@ namespace BaoYuanSerial.Views
             AboutMenu.Command = ReactiveCommand.Create(AboutMenuClicked);
             var DonateMenu = this.FindControl<MenuItem>("DonateMenu");
             DonateMenu.Command = ReactiveCommand.Create(DonateMenuClicked);
+            var OptionsMenu = this.FindControl<MenuItem>("OptionsMenu");
+            OptionsMenu.Command = ReactiveCommand.Create(OptionsMenuClicked);
+            var tlbtnOptions = this.FindControl<Button>("tlbtnOptions");
+            tlbtnOptions.Command = ReactiveCommand.Create(OptionsMenuClicked);
         }
                
         private void InitializeComponent()
@@ -57,6 +61,18 @@ namespace BaoYuanSerial.Views
         {
             var window = new DonateWindow
             {                
+                Topmost = true,
+                CanResize = false
+            };
+            window.ShowDialog(this);
+            window.Activate();
+
+            _windows.Add(window);
+        }
+        private void OptionsMenuClicked()
+        {
+            var window = new OptionsWindow
+            {
                 Topmost = true,
                 CanResize = false
             };

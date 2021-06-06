@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:BaoYuanSerial.ViewModels"
+		mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
+		WindowStartupLocation="CenterScreen"
+		Width="500" Height="350"
+        x:Class="BaoYuanSerial.Views.OptionsWindow"
+        Title="Options">
+	<Design.DataContext>
+		<vm:OptionsViewModel/>
+	</Design.DataContext>
+	<Grid Margin="5" RowDefinitions="*,40" Background="LightGray">
+		<TabControl Background="White">
+			<TabItem Header="Receive" IsSelected="True">
+				<Grid Margin="0,5,0,5" ColumnDefinitions="110,150,100,*" RowDefinitions="40,40,*"
+					  >
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="Minimal Interval:" VerticalAlignment="Center"
+							   Margin="0,0,5,5"/>
+					<NumericUpDown Grid.Row="0" Grid.Column="1" Value="500" VerticalContentAlignment="Center"
+								Margin="0,0,5,5"/>
+					<TextBlock Grid.Row="0" Grid.Column="2" Text="ms" VerticalAlignment="Center"
+							   Margin="0,0,5,5"/>
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="Time Format:" VerticalAlignment="Center"
+							   Margin="0,0,5,5"/>
+					<TextBox Grid.Row="1" Grid.Column="1" Text="[hh:mm:ss.zzz]" VerticalContentAlignment="Center"
+								Margin="0,0,5,5"/>
+					<TextBlock Grid.Row="1" Grid.Column="2" Text="[22:23:40.513]" VerticalAlignment="Center"
+							   Margin="0,0,5,5"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Send" IsSelected="True">
+				<Grid RowDefinitions="120,*">
+					<Grid RowDefinitions="40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
+						<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+								   Text="Line Ending Mode" VerticalAlignment="Bottom"
+							   Margin="0,0,5,5"/>
+						<Border Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
+								BorderBrush="Black">																	
+						</Border>
+						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="raLEM" Content="New Line"
+								Margin="5,0,0,0"/>
+						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="raLEM" Content="Carriage Return"/>
+						<RadioButton Grid.Row="2" Grid.Column="2" GroupName="raLEM" Content="NL &amp; CR"/>
+						<RadioButton Grid.Row="2" Grid.Column="3" GroupName="raLEM" Content="CR &amp; NR"/>
+					</Grid>
+					
+				</Grid>
+			</TabItem>
+			<TabItem Header="Log" >
+				<Grid RowDefinitions="40,40,40,40,40,*" ColumnDefinitions="100,200,100,*">
+					<CheckBox Content="Save Log Message" Grid.ColumnSpan="2"/>
+					<TextBlock Grid.Row="1" Text="File Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+							   Margin="0,5,5,5"/>
+					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+					<Button Name="btnOpenFile" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
+							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
+							Content="Open..."/>
+					<TextBlock Grid.Row="2" Text="Max File Size" VerticalAlignment="Center" HorizontalAlignment="Right"
+							   Margin="0,5,5,5"/>
+					<NumericUpDown Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"
+								   Value="1024"/>
+					<TextBlock Grid.Row="2" Grid.Column="2" Text="MB" VerticalAlignment="Center" HorizontalAlignment="Left"
+							   Margin="0,5,5,5"/>
+					<CheckBox Grid.Row="3" Content="Enable Write Buffer" Grid.ColumnSpan="2"/>
+					<TextBlock Grid.Row="4" Text="Max File Size" VerticalAlignment="Center" HorizontalAlignment="Right"
+								   Margin="0,5,5,5"/>
+					<NumericUpDown Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"
+								   Value="1"/>
+					<TextBlock Grid.Row="4" Grid.Column="2" Text="KB" VerticalAlignment="Center" HorizontalAlignment="Left"
+								   Margin="0,5,5,5" />
+				</Grid>
+			</TabItem>
+			<TabItem Header="Display" >
+				<Grid RowDefinitions="40,40,40,*" ColumnDefinitions="150,150,100">
+					<CheckBox Content="Format Display Color" Grid.ColumnSpan="2"/>
+					<TextBlock Grid.Row="1" Text="Receive Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
+							   Margin="0,5,5,5"/>
+					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+					<Button Name="btnColorReceive" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
+							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
+							Content="Color..."/>
+					<TextBlock Grid.Row="2" Text="Send Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
+							   Margin="0,5,5,5"/>
+					<TextBox Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+					<Button Name="btnColorSend" Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
+							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
+							Content="Color..."/>
+				</Grid>
+			</TabItem>
+		</TabControl>
+		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right"  Margin="5">
+			<Button Name="btnOK" Content="OK" Width="100" VerticalAlignment="Stretch"
+						HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+					Margin="0,0,5,0"/>
+			<Button Name="btnCancel" Content="Cancel" Width="100" VerticalAlignment="Stretch"
+					HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+					Margin="0,0,5,0"/>
+			<Button Name="btnApply" Content="Apply" Width="100" VerticalAlignment="Stretch" 
+					HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+					/>
+			
+		</StackPanel>
+	</Grid>
+	
+</Window>

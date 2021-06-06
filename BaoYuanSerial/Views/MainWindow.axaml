@@ -20,7 +20,7 @@
 				<MenuItem Header="Tool_Box" />
 				<MenuItem Header="Ascii_Code" />
 		        <Separator/>
-				<MenuItem Header="_Options" />
+				<MenuItem Name="OptionsMenu" Header="_Options" />
 			</MenuItem>
 			<MenuItem Header="_Help(H)">
 				<MenuItem Header="_Document" />
@@ -55,7 +55,7 @@
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
 				<Image Source="/Assets/hide-left.png"/>
 			</Button>
-			<Button Grid.Column="6" ToolTip.Tip="Options"
+			<Button Name="tlbtnOptions" Grid.Column="6" ToolTip.Tip="Options"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
 				<Image Source="/Assets/options.png"/>
 			</Button>

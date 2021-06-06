@@ -3,10 +3,11 @@
         xmlns:vm="using:BaoYuanSerial.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"		
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
         x:Class="BaoYuanSerial.Views.MainWindow"
 		WindowStartupLocation="CenterScreen"
-		Width="800" Height="500"
+		Width="900" Height="700"
+		MinWidth="900" MinHeight="700"
         Icon="/Assets/yinyang_64.png"
         Title="BaoYuanSerial"
 		>
@@ -14,6 +15,12 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+	<Window.Styles>
+		<Style Selector="ComboBoxItem">
+			<Setter Property="FontSize" Value="15"/>
+		</Style>
+	</Window.Styles>
+	
 	<Grid RowDefinitions="30,32,*,25" >
 		<Menu Background="LightGray">
 			<MenuItem Header="_Tool(T)" Margin="5,0,0,0">
@@ -74,9 +81,9 @@
 						<TextBlock Grid.Row="1" Text="Port" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,2,0,0"/>
 						<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" 
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-							
-						</ComboBox>
+								  VerticalAlignment="Center" Margin="5,2,10,0" 
+								  Items="{Binding SerialPortList}"
+								  />
 						<TextBlock Grid.Row="2" Text="Baudrate" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"

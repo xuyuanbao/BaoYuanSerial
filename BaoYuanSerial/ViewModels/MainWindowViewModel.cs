@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using BaoYuanSerial.Views;
 using MessageBox.Avalonia.DTO;
 using MessageBox.Avalonia.Enums;
+using System.Collections.ObjectModel;
+using BaoYuanSerial.Services;
 
 namespace BaoYuanSerial.ViewModels
 {
@@ -15,7 +17,7 @@ namespace BaoYuanSerial.ViewModels
        
         public MainWindowViewModel()
         {
-                        
+            SerialPortList = SerialService.GetSerials();
         }
 
 
@@ -31,7 +33,17 @@ namespace BaoYuanSerial.ViewModels
             }
         }
 
+        private ObservableCollection<string> _SerialPortList = new ObservableCollection<string>();
 
+        public ObservableCollection<string> SerialPortList
+        {
+            get => _SerialPortList;
+            set
+            {
+                _SerialPortList = value;
+                this.RaisePropertyChanged();
+            }
+        }
 
     }
 }

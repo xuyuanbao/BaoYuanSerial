@@ -1,0 +1,170 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BaoYuanSerial.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"		
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
+        x:Class="BaoYuanSerial.Views.MainWindow"
+		WindowStartupLocation="CenterScreen"
+		Width="800" Height="500"
+        Icon="/Assets/yinyang_64.png"
+        Title="BaoYuanSerial"
+		>
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Grid RowDefinitions="30,32,*,25" >
+		<Menu Background="LightGray">
+			<MenuItem Header="_Tool(T)" Margin="5,0,0,0">
+				<MenuItem Header="Tool_Box" />
+				<MenuItem Header="Ascii_Code" />
+		        <Separator/>
+				<MenuItem Header="_Options" />
+			</MenuItem>
+			<MenuItem Header="_Help(H)">
+				<MenuItem Header="_Document" />
+				<Separator/>
+				<MenuItem Name="AboutMenu" Header="_About" />
+			</MenuItem>
+			<MenuItem Header="Do_nate" Name="DonateMenu">
+			</MenuItem>
+		</Menu>
+		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,*">
+			<Button Grid.Column="0" ToolTip.Tip="Save Log" 
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>				
+			</Button>
+			<Button Grid.Column="1" ToolTip.Tip="Start"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+			<Button Grid.Column="2" ToolTip.Tip="Pause"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+			<Button Grid.Column="3" ToolTip.Tip="Stop"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+			<Button Grid.Column="4" ToolTip.Tip="Clear"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+			<Button Grid.Column="5" ToolTip.Tip="Hide Left"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+			<Button Grid.Column="6" ToolTip.Tip="Options"
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+				<Image Source="/Assets/yinyang_32.png"/>
+			</Button>
+		</Grid>
+		<SplitView Grid.Row="2" IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="300">
+			<SplitView.Pane>
+				<Grid RowDefinitions="9*,9*,6*">
+					<Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,3*">
+						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center"
+							   Text="Serial Port Settings" Margin="5,0"/>
+						<Border Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="2"
+								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,-5"
+								CornerRadius="2"/>
+						<TextBlock Grid.Row="1" Text="Port" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,2,0,0"/>
+						<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" 
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+							
+						</ComboBox>
+						<TextBlock Grid.Row="2" Text="Baudrate" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,0,0,0"/>
+						<ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+
+						</ComboBox>
+						<TextBlock Grid.Row="3" Text="Date Bits" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,0,0,0"/>
+						<ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+
+						</ComboBox>
+						<TextBlock Grid.Row="4" Text="Parity" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,0,0,0"/>
+						<ComboBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+
+						</ComboBox>
+						<TextBlock Grid.Row="5" Text="Stop Bits" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,0,0,0"/>
+						<ComboBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+
+						</ComboBox>
+						<TextBlock Grid.Row="6" Text="Flow Type" TextAlignment="Right"
+								   VerticalAlignment="Center" Margin="5,0,0,0"/>
+						<ComboBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" Margin="5,2,10,0">
+
+						</ComboBox>
+					</Grid>
+					<Grid Grid.Row="1" RowDefinitions="3*,0.2*,2*,*,*,*" ColumnDefinitions="*,*">
+						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
+							   Text="Receive Settings" Margin="5,0"/>
+						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2"
+								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0"
+								CornerRadius="2"/>
+						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Receive"
+									 Content="Text" Margin="10,5"  />
+						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Receive"
+									 Content="Hex" Margin="10,5" />
+						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+									 Content="Auto Feed Line" Margin="10,5" />
+						<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+									 Content="Display Send" Margin="10,5" />
+						<CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+									 Content="Display Time" Margin="10,5" />
+						
+					</Grid>
+					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,*,0.5*">
+						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
+							   Text="Send Settings" Margin="5,0"/>
+						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
+								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,5"
+								CornerRadius="2"/>
+						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Receive"
+									 Content="Text" Margin="10,5" />
+						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Receive"
+									 Content="Hex" Margin="10,5" />
+						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+									 Content="Loop" Margin="10,5" />
+						<NumericUpDown Grid.Row="3" Grid.Column="1" 
+									   Value="900" Margin="0,0,0,10" />
+						<TextBlock Grid.Row="3" Grid.Column="2"
+										Text="ms" VerticalAlignment="Center" Margin="5" />
+					</Grid>
+				</Grid>
+			</SplitView.Pane>
+
+			<Grid RowDefinitions="*,70,40" ColumnDefinitions="*,100">
+				<TextBox Grid.Row="0" Grid.ColumnSpan="2" IsReadOnly="True" Margin="0,0,5,5"
+						 ScrollViewer.VerticalScrollBarVisibility="Auto"
+						 TextWrapping="Wrap" Text="{Binding Path=ReciveTxt}"
+						 />
+				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5"/>
+				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+				<Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch" Margin="0,0,5,5"
+						Content="Send" FontSize="15" Padding="0" 
+						VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+			</Grid>
+		</SplitView>
+		<Grid Grid.Row="3" ColumnDefinitions="200,200,200">
+			<TextBlock Grid.Column="0" Text="COM1 CLOSED" VerticalAlignment="Bottom" Margin="5"/>
+			<TextBlock Grid.Column="1" Text="Rx:0 Bytes" Foreground="OrangeRed" VerticalAlignment="Bottom" Margin="5"/>
+			<TextBlock Grid.Column="2" Text="Tx:0 Bytes" Foreground="BlueViolet" VerticalAlignment="Bottom" Margin="5"/>
+		</Grid>
+	</Grid>
+	
+
+</Window>

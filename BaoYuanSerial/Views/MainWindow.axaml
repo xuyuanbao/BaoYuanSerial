@@ -33,31 +33,31 @@
 		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,*">
 			<Button Grid.Column="0" ToolTip.Tip="Save Log" 
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>				
+				<Image Source="/Assets/save.png"/>				
 			</Button>
 			<Button Grid.Column="1" ToolTip.Tip="Start"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/start.png"/>
 			</Button>
 			<Button Grid.Column="2" ToolTip.Tip="Pause"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/pause.png"/>
 			</Button>
 			<Button Grid.Column="3" ToolTip.Tip="Stop"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/stop.png"/>
 			</Button>
 			<Button Grid.Column="4" ToolTip.Tip="Clear"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/clear.png"/>
 			</Button>
 			<Button Grid.Column="5" ToolTip.Tip="Hide Left"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/hide-left.png"/>
 			</Button>
 			<Button Grid.Column="6" ToolTip.Tip="Options"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<Image Source="/Assets/yinyang_32.png"/>
+				<Image Source="/Assets/options.png"/>
 			</Button>
 		</Grid>
 		<SplitView Grid.Row="2" IsPaneOpen="True"

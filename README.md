@@ -4,3 +4,4 @@ Welcome to use the BaoYuanSerial that is a GUI serial debug tool for Linux(Ubunt
 
 Microsoft Windows Interface
 ----
+![](https://github.com/xuyuanbao/BaoYuanSerial/Img/MainUI_WIN10.png)

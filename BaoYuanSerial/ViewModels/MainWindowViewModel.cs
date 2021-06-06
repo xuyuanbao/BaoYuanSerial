@@ -19,7 +19,7 @@ namespace BaoYuanSerial.ViewModels
         }
 
 
-        private string _ReciveTxt = "123";
+        private string _ReciveTxt = "";
 
         public string ReciveTxt
         {

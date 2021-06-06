@@ -2,8 +2,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
         x:Class="BaoYuanSerial.Views.DonateWindow"
+		Width="400" Height="600"
+		WindowStartupLocation="CenterScreen"
         Title="DonateWindow">
-  Welcome to Avalonia!
+	<Grid RowDefinitions="50,*,50,45,200,100,50" ColumnDefinitions="*,*">
+		<TextBlock Text="Support BaoYuanSerial" FontWeight="Bold" Margin="10"/>
+		<TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="10" TextWrapping="Wrap"
+				   Text="Baoyuanserial is free and free software, which can be downloaded for free. The contribution is entirely voluntary. If you like this software, please consider donating." />
+	    <TextBlock Grid.Row="2" Text="Donate channels" VerticalAlignment="Center" Margin="10"/>
+		<TextBlock Grid.Row="3" Text="Alipay" Margin="10" />
+		<TextBlock Grid.Row="3" Grid.Column="1" Text="WeChat" Margin="10" />
+		<Image Grid.Row="4" Grid.Column="0" Source="/Assets/zhifubao.png" Stretch="Fill"/>
+		<Image Grid.Row="4" Grid.Column="1" Source="/Assets/weixin.png" Stretch="Uniform"/>
+		<TextBlock Grid.Row="5" Grid.ColumnSpan="2"  Margin="10" TextWrapping="Wrap" Foreground="Chocolate"
+				   Text="Note: when donating, please write down your nickname in the remarks.The nickname will be published in GitHub warehouse of this project"/>
+		<Button Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" Margin="10" HorizontalContentAlignment="Center"
+				Name="btnOK" Content="OK" Width="100"/>
+	</Grid>
 </Window>

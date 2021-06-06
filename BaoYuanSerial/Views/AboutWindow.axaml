@@ -4,10 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:vm="using:BaoYuanSerial.ViewModels"
 		Icon="/Assets/yinyang_64.png"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="300"
         x:Class="BaoYuanSerial.Views.AboutWindow"
 		WindowStartupLocation="CenterScreen"
-		Width="400" Height="300"
+		Width="500" Height="300"
         Title="AboutWindow">
 	<Design.DataContext>
 		<vm:AboutViewModel/>
@@ -32,7 +32,7 @@
 			<TextBlock Text="{Binding Path=Email}" Margin="10,10,0,0"/>
 			<TextBlock Text="QQ:416315797" Margin="10,10,0,0"/>
 			<TextBlock Text="WeChat/Phone:18694923164" Margin="10,10,0,0"/>
-			<TextBlock Name="txtGit" Text="GitHub:18694923164" Margin="10,10,0,0"/>
+			<TextBlock Name="txtGit" Text="GitHub:https://github.com/xuyuanbao/BaoYuanSerial" Margin="10,10,0,0"/>
 			<TextBlock Text="{Binding Path=Provide}" Margin="10,30,0,0"/>
 			
 		</StackPanel>

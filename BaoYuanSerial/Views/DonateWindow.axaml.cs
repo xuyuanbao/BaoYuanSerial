@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using ReactiveUI;
 
 namespace BaoYuanSerial.Views
 {
@@ -12,8 +13,10 @@ namespace BaoYuanSerial.Views
 #if DEBUG
             this.AttachDevTools();
 #endif
-
-
+            Button btnOK = this.FindControl<Button>("btnOK");
+            btnOK.Command= ReactiveCommand.Create(()=> {
+                this.Close();
+            });
         }
 
         private void InitializeComponent()

@@ -82,37 +82,50 @@
 								   VerticalAlignment="Center" Margin="5,2,0,0"/>
 						<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" 
 								  VerticalAlignment="Center" Margin="5,2,10,0" 
-								  Items="{Binding SerialPortList}"
+								  Items="{Binding SerialPortList}" SelectedIndex="{Binding PortNameIndex}"
 								  />
-						<TextBlock Grid.Row="2" Text="Baudrate" TextAlignment="Right"
+						<TextBlock Grid.Row="2" Text="BaudRate" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-
-						</ComboBox>
+								  VerticalAlignment="Center" Margin="5,2,10,0"
+								  Items="{Binding BaudRateList}" SelectedIndex="{Binding BaudRateIndex}"/>
 						<TextBlock Grid.Row="3" Text="Date Bits" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-
-						</ComboBox>
+								  VerticalAlignment="Center" Margin="5,2,10,0"
+							      Items="{Binding DataBitsList}"
+								  SelectedIndex="{Binding DataBitsIndex}"
+								  />
 						<TextBlock Grid.Row="4" Text="Parity" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-
+								  VerticalAlignment="Center" Margin="5,2,10,0"
+								  SelectedIndex="{Binding Parity}">
+							<ComboBoxItem Content="None"/>
+							<ComboBoxItem Content="Odd"/>
+							<ComboBoxItem Content="Even"/>
+							<ComboBoxItem Content="Mark"/>
+							<ComboBoxItem Content="Space"/>							
 						</ComboBox>
 						<TextBlock Grid.Row="5" Text="Stop Bits" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch"
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-
+								  VerticalAlignment="Center" Margin="5,2,10,0"
+								  SelectedIndex="{Binding StopBits}"
+								  >
+							<ComboBoxItem Content="1"/>
+							<ComboBoxItem Content="1.5"/>
+							<ComboBoxItem Content="2"/>
 						</ComboBox>
 						<TextBlock Grid.Row="6" Text="Flow Type" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"
-								  VerticalAlignment="Center" Margin="5,2,10,0">
-
+								  VerticalAlignment="Center" Margin="5,2,10,0"
+								  SelectedIndex="{Binding FlowType}"								  
+								  >
+							<ComboBoxItem Content="None"/>
+							<ComboBoxItem Content="RTS/CTS"/>
+							<ComboBoxItem Content="DTR/CTS"/>							
 						</ComboBox>
 					</Grid>
 					<Grid Grid.Row="1" RowDefinitions="3*,0.2*,2*,*,*,*" ColumnDefinitions="*,*">
@@ -133,22 +146,22 @@
 									 Content="Display Time" Margin="10,5" />
 						
 					</Grid>
-					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,*,0.5*">
+					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,1.5*,40">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
 							   Text="Send Settings" Margin="5,0"/>
 						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,5"
 								CornerRadius="2"/>
-						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Receive"
+						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Send"
 									 Content="Text" Margin="10,5" />
-						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Receive"
+						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Send"
 									 Content="Hex" Margin="10,5" />
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Loop" Margin="10,5" />
+									 Content="Loop" Margin="10,0,5,5" />
 						<NumericUpDown Grid.Row="3" Grid.Column="1" 
-									   Value="900" Margin="0,0,0,10" />
+									   Value="900" VerticalAlignment="Center" Margin="10,0,5,15" />
 						<TextBlock Grid.Row="3" Grid.Column="2"
-										Text="ms" VerticalAlignment="Center" Margin="5" />
+										Text="ms" VerticalAlignment="Center" Margin="5,5,5,10" />
 					</Grid>
 				</Grid>
 			</SplitView.Pane>

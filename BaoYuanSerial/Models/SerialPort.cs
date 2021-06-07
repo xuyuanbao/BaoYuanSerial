@@ -7,24 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using BaoYuanSerial.Models;
 
-namespace BaoYuanSerial.Services
+
+namespace BaoYuanSerial.Models
 {
-    public class SerialService
+    public class SerialPort : CustomSerialPort
     {
-        private SerialPort serialPort;
-       
-        public SerialService(SerialPort serialPort)
-        {
 
+        public SerialPort(string portName, int baudRate = 115200, Parity parity = Parity.None, int databits = 8, StopBits stopBits = StopBits.One)
+            : base(portName, baudRate, parity, databits, stopBits)
+        {
+            
         }
+
+        public SerialPort(string portname, int baudrate, int parity, int databits, int stopbits, bool dtrenable, bool rtsenable) :base(portname, baudrate, 
+            (Parity)parity,databits,(StopBits)stopbits)
+        {
+            this.DtrEnable = dtrenable;
+            this.RtsEnable = rtsenable;
+        }
+
 
         //无意义，只是因为父类的 Sp_DataReceived() 不是 public
         public void StartMonitorReceive()
         {
 
-            
+            Sp_DataReceived(new object(), new SerialDataReceivedEventArgs(SerialData.Eof));
         }
         /// <summary>
         /// 获取计算机的所有串口
@@ -39,12 +47,12 @@ namespace BaoYuanSerial.Services
                 string[] vs = CustomSerialPort.GetPortNames();
                 lsStr = new ObservableCollection<string>(vs);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw (ex);
             }
             return lsStr;
         }
-                
+
     }
- }
+}

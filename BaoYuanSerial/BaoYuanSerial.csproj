@@ -6,7 +6,6 @@
     <ApplicationIcon>Assets\yinyang_64.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <Folder Include="Base\" />
   </ItemGroup>

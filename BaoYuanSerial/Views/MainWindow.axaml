@@ -34,8 +34,14 @@
 				<Separator/>
 				<MenuItem Name="AboutMenu" Header="_About" />
 			</MenuItem>
+			<MenuItem Header="_Language" Name="LanguageMenu">
+				<MenuItem Name="ChineseMenu" Header="_Chinese" />
+				<Separator/>
+				<MenuItem Name="EnglishMenu" Header="_English" />
+			</MenuItem>
 			<MenuItem Header="Do_nate" Name="DonateMenu">
 			</MenuItem>
+			
 		</Menu>
 		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,*">
 			<Button Grid.Column="0" ToolTip.Tip="Save Log" 
@@ -180,9 +186,16 @@
 			</Grid>
 		</SplitView>
 		<Grid Grid.Row="3" ColumnDefinitions="200,200,200">
-			<TextBlock Grid.Column="0" Text="COM1 CLOSED" VerticalAlignment="Bottom" Margin="5"/>
-			<TextBlock Grid.Column="1" Text="Rx:0 Bytes" Foreground="OrangeRed" VerticalAlignment="Bottom" Margin="5"/>
-			<TextBlock Grid.Column="2" Text="Tx:0 Bytes" Foreground="BlueViolet" VerticalAlignment="Bottom" Margin="5"/>
+			<TextBlock Grid.Column="0" Text="{Binding ComPortState}" 
+					   VerticalAlignment="Bottom" Margin="5"
+					   Foreground="{Binding ComPortStateColor}"
+					   />
+			<TextBlock Grid.Column="1" Text="{Binding ReceiveBytesStr}" 
+					   Foreground="{Binding ReceiveBytesColor}" 
+					   VerticalAlignment="Bottom" Margin="5"/>
+			<TextBlock Grid.Column="2" Text="{Binding SendBytesStr}" 
+					   Foreground="{Binding SendBytesColor}"
+					   VerticalAlignment="Bottom" Margin="5"/>
 		</Grid>
 	</Grid>
 	

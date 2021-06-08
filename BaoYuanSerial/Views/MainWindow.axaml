@@ -24,8 +24,8 @@
 	<Grid RowDefinitions="30,32,*,25" >
 		<Menu Background="LightGray">
 			<MenuItem Header="_Tool(T)" Margin="5,0,0,0">
-				<MenuItem Header="Tool_Box" />
-				<MenuItem Header="Ascii_Code" />
+				<MenuItem Header="Tool_Box" Name="ToolBoxMenu" />
+				<MenuItem Header="Ascii_Code" Name="AsciiCodeMenu" />
 		        <Separator/>
 				<MenuItem Name="OptionsMenu" Header="_Options" />
 			</MenuItem>
@@ -141,15 +141,20 @@
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0"
 								CornerRadius="2"/>
 						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Receive"
-									 Content="Text" Margin="10,5"  />
+									 Content="Text" Margin="10,5" 
+									 IsChecked="{Binding ReceivePara.IsText}"/>
 						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Receive"
-									 Content="Hex" Margin="10,5" />
+									 Content="Hex" Margin="10,5" 
+									 IsChecked="{Binding ReceivePara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Auto Feed Line" Margin="10,5" />
+									 Content="Auto Feed Line" Margin="10,5" 
+								  IsChecked="{Binding ReceivePara.AutoFeed}"/>
 						<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Display Send" Margin="10,5" />
+									 Content="Display Send" Margin="10,5" 
+								  IsChecked="{Binding ReceivePara.DisplaySend}"/>
 						<CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Display Time" Margin="10,5" />
+									 Content="Display Time" Margin="10,5" 
+								  IsChecked="{Binding ReceivePara.DisplayTime}"/>
 						
 					</Grid>
 					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,1.5*,40">

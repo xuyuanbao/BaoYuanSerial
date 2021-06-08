@@ -2,9 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:colorpicker="clr-namespace:AvaloniaColorPicker;assembly=AvaloniaColorPicker"
         xmlns:vm="using:BaoYuanSerial.ViewModels"
 		mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
 		WindowStartupLocation="CenterScreen"
+		Icon="/Assets/yinyang_64.png"
 		Width="500" Height="350"
         x:Class="BaoYuanSerial.Views.OptionsWindow"
         Title="Options">
@@ -19,31 +21,32 @@
 					<TextBlock Grid.Row="0" Grid.Column="0" Text="Minimal Interval:" VerticalAlignment="Center"
 							   Margin="0,0,5,5"/>
 					<NumericUpDown Grid.Row="0" Grid.Column="1" Value="500" VerticalContentAlignment="Center"
-								Margin="0,0,5,5"/>
+								Margin="0,0,5,2"/>
 					<TextBlock Grid.Row="0" Grid.Column="2" Text="ms" VerticalAlignment="Center"
 							   Margin="0,0,5,5"/>
 					<TextBlock Grid.Row="1" Grid.Column="0" Text="Time Format:" VerticalAlignment="Center"
-							   Margin="0,0,5,5"/>
+							   Margin="0,0,5,0"/>
 					<TextBox Grid.Row="1" Grid.Column="1" Text="[hh:mm:ss.zzz]" VerticalContentAlignment="Center"
-								Margin="0,0,5,5"/>
+								Margin="0,0,5,2" Padding="0"/>
 					<TextBlock Grid.Row="1" Grid.Column="2" Text="[22:23:40.513]" VerticalAlignment="Center"
-							   Margin="0,0,5,5"/>
+							   Margin="0,0,5,0"/>
 				</Grid>
 			</TabItem>
-			<TabItem Header="Send" IsSelected="True">
+			<TabItem Header="Send" IsSelected="False">
 				<Grid RowDefinitions="120,*">
-					<Grid RowDefinitions="40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
-						<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+					<Grid RowDefinitions="40,40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
+						<CheckBox Content="Format Send" Grid.ColumnSpan="2"/>
+						<TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
 								   Text="Line Ending Mode" VerticalAlignment="Bottom"
 							   Margin="0,0,5,5"/>
-						<Border Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
+						<Border Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
 								BorderBrush="Black">																	
 						</Border>
-						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="raLEM" Content="New Line"
+						<RadioButton Grid.Row="3" Grid.Column="0" GroupName="raLEM" Content="New Line"
 								Margin="5,0,0,0"/>
-						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="raLEM" Content="Carriage Return"/>
-						<RadioButton Grid.Row="2" Grid.Column="2" GroupName="raLEM" Content="NL &amp; CR"/>
-						<RadioButton Grid.Row="2" Grid.Column="3" GroupName="raLEM" Content="CR &amp; NR"/>
+						<RadioButton Grid.Row="3" Grid.Column="1" GroupName="raLEM" Content="Carriage Return"/>
+						<RadioButton Grid.Row="3" Grid.Column="2" GroupName="raLEM" Content="NL &amp; CR"/>
+						<RadioButton Grid.Row="3" Grid.Column="3" GroupName="raLEM" Content="CR &amp; NR"/>
 					</Grid>
 					
 				</Grid>
@@ -82,19 +85,17 @@
 					<TextBlock Grid.Row="1" Text="Receive Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
 							   Margin="0,5,5,5"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
-							 VerticalAlignment="Stretch" Margin="0,0,5,5"/>
-					<Button Name="btnColorReceive" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
-							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
-							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
-							Content="Color..."/>
+							 VerticalAlignment="Stretch" Margin="0,0,5,5"
+							 Name="txtColorReceive" Text="{Binding DisplayPara.ReceiveTxtColor}" />
+					<colorpicker:ColorButton Color="#000000" Name="btnColorReceive" Grid.Row="1" Grid.Column="2" 
+							VerticalAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="True"/>
 					<TextBlock Grid.Row="2" Text="Send Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
-							   Margin="0,5,5,5"/>
+							   Margin="0,5,5,0"/>
 					<TextBox Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"
-							 VerticalAlignment="Stretch" Margin="0,0,5,5"/>
-					<Button Name="btnColorSend" Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
-							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
-							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
-							Content="Color..."/>
+							 VerticalAlignment="Stretch" Margin="0,0,5,0"
+						 Name="txtColorSend" Text="{Binding DisplayPara.SendTxtColor}"/>
+					<colorpicker:ColorButton Color="#000000" Name="btnColorSend" Grid.Row="2" Grid.Column="2"
+							VerticalAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="True"/>
 				</Grid>
 			</TabItem>
 		</TabControl>

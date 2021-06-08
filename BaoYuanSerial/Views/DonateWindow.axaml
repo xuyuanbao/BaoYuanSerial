@@ -6,6 +6,7 @@
         x:Class="BaoYuanSerial.Views.DonateWindow"
 		Width="450" Height="500"
 		WindowStartupLocation="CenterScreen"
+		Icon="/Assets/yinyang_64.png"
         Title="DonateWindow">
 	<Grid RowDefinitions="30,*,30,30,200,75,50" ColumnDefinitions="*,*">
 		<TextBlock Text="Support BaoYuanSerial" FontWeight="Bold" Margin="10"/>

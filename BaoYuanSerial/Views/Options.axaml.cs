@@ -12,11 +12,34 @@ namespace BaoYuanSerial.Views
 #if DEBUG
             this.AttachDevTools();
 #endif
+            TextBox txtColorReceive = this.FindControl<TextBox>("txtColorReceive");
+            AvaloniaColorPicker.ColorButton button = this.FindControl<AvaloniaColorPicker.ColorButton>("btnColorReceive");
+            //...
+            button.PropertyChanged += (s, e) =>
+            {
+                if (e.Property == AvaloniaColorPicker.ColorButton.ColorProperty)
+                {
+                    txtColorReceive.Text = button.Color.ToString();
+                }
+            };
+            TextBox txtColorSend = this.FindControl<TextBox>("txtColorSend");
+            AvaloniaColorPicker.ColorButton btnColorSend = this.FindControl<AvaloniaColorPicker.ColorButton>("btnColorSend");
+            //...
+            btnColorSend.PropertyChanged += (s, e) =>
+            {
+                if (e.Property == AvaloniaColorPicker.ColorButton.ColorProperty)
+                {
+                    txtColorSend.Text = btnColorSend.Color.ToString();
+                }
+            };
+
         }
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+
+
         }
     }
 }

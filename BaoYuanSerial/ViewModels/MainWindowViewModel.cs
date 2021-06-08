@@ -10,6 +10,7 @@ using MessageBox.Avalonia.Enums;
 using System.Collections.ObjectModel;
 using BaoYuanSerial.Services;
 using Avalonia.Media;
+using BaoYuanSerial.Models;
 
 namespace BaoYuanSerial.ViewModels
 {
@@ -21,6 +22,9 @@ namespace BaoYuanSerial.ViewModels
             SerialPortList = SerialService.GetSerials();
             DataBitsIndex = 3;
             _ComPortState = SerialPortList[PortNameIndex] + " ClOSED";
+
+            ReceivePara = GloabalPara.ReceivePara;
+            SendPara = GloabalPara.SendPara;
 
         }
 
@@ -192,6 +196,30 @@ namespace BaoYuanSerial.ViewModels
                 _ReceiveBytesColor = value;
                 this.RaisePropertyChanged();
             }
+        }
+
+        private ReceivePara _ReceivePara = new ReceivePara();
+        public ReceivePara ReceivePara
+        {
+            get=> _ReceivePara;
+            set
+            {
+                _ReceivePara = value;
+                this.RaisePropertyChanged();
+            }
+
+        }
+
+        private SendPara _SendPara = new SendPara();
+        public SendPara SendPara
+        {
+            get => _SendPara;
+            set
+            {
+                _SendPara = value;
+                this.RaisePropertyChanged();
+            }
+
         }
 
         private string _ReciveTxt = "";

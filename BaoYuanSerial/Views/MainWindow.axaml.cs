@@ -29,6 +29,10 @@ namespace BaoYuanSerial.Views
             OptionsMenu.Command = ReactiveCommand.Create(OptionsMenuClicked);
             var tlbtnOptions = this.FindControl<Button>("tlbtnOptions");
             tlbtnOptions.Command = ReactiveCommand.Create(OptionsMenuClicked);
+            var ToolBoxMenu = this.FindControl<MenuItem>("ToolBoxMenu");
+            ToolBoxMenu.Command = ReactiveCommand.Create(ToolBoxMenuClicked);
+            var AsciiCodeMenu = this.FindControl<MenuItem>("AsciiCodeMenu");
+            AsciiCodeMenu.Command = ReactiveCommand.Create(AsciiCodeMenuClicked);
         }
                
         private void InitializeComponent()
@@ -72,6 +76,32 @@ namespace BaoYuanSerial.Views
         private void OptionsMenuClicked()
         {
             var window = new OptionsWindow
+            {
+                Topmost = true,
+                CanResize = false
+            };
+            window.ShowDialog(this);
+            window.Activate();
+
+            _windows.Add(window);
+        }
+
+        private void ToolBoxMenuClicked()
+        {
+            var window = new ToolBoxWindow
+            {
+                Topmost = true,
+                CanResize = false
+            };
+            window.ShowDialog(this);
+            window.Activate();
+
+            _windows.Add(window);
+        }
+
+        private void AsciiCodeMenuClicked()
+        {
+            var window = new AsciiCodeWindow
             {
                 Topmost = true,
                 CanResize = false

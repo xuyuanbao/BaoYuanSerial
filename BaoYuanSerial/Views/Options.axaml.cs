@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using BaoYuanSerial.ViewModels;
+using System;
 
 namespace BaoYuanSerial.Views
 {
@@ -12,6 +14,7 @@ namespace BaoYuanSerial.Views
 #if DEBUG
             this.AttachDevTools();
 #endif
+            this.DataContext = new OptionsViewModel();
             TextBox txtColorReceive = this.FindControl<TextBox>("txtColorReceive");
             AvaloniaColorPicker.ColorButton button = this.FindControl<AvaloniaColorPicker.ColorButton>("btnColorReceive");
             //...
@@ -19,7 +22,12 @@ namespace BaoYuanSerial.Views
             {
                 if (e.Property == AvaloniaColorPicker.ColorButton.ColorProperty)
                 {
-                    txtColorReceive.Text = button.Color.ToString();
+                    OptionsViewModel ovm = (OptionsViewModel)this.DataContext;
+                    if (ovm != null)
+                    { 
+                        ovm.DisplayPara.ReceiveTxtColor = button.Color.ToString();
+                    }
+                   // txtColorReceive.Text = button.Color.ToString();
                 }
             };
             TextBox txtColorSend = this.FindControl<TextBox>("txtColorSend");
@@ -29,9 +37,16 @@ namespace BaoYuanSerial.Views
             {
                 if (e.Property == AvaloniaColorPicker.ColorButton.ColorProperty)
                 {
-                    txtColorSend.Text = btnColorSend.Color.ToString();
+                    OptionsViewModel ovm = (OptionsViewModel)this.DataContext;
+                    if (ovm != null)
+                    {
+                        ovm.DisplayPara.SendTxtColor = btnColorSend.Color.ToString();
+                    }
+                    
                 }
             };
+
+            DataContextChanged += OptionsWindow_DataContextChanged;
 
         }
 
@@ -40,6 +55,13 @@ namespace BaoYuanSerial.Views
             AvaloniaXamlLoader.Load(this);
 
 
+        }
+
+        private void OptionsWindow_DataContextChanged(object sender, EventArgs e)
+        {
+            var vm = DataContext as OptionsViewModel;
+            //vm.NoteEditClicked += Note_Edit;
+            //vm.NoteDeleteClicked += Note_Delete;
         }
     }
 }

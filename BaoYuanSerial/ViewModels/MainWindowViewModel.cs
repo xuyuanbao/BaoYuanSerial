@@ -26,8 +26,9 @@ namespace BaoYuanSerial.ViewModels
             ReceivePara = GloabalPara.ReceivePara;
             SendPara = GloabalPara.SendPara;
 
-        }
 
+        }
+        #region PortParaGetSet
         private ObservableCollection<string> _SerialPortList = new ObservableCollection<string>();
 
         public ObservableCollection<string> SerialPortList
@@ -133,7 +134,9 @@ namespace BaoYuanSerial.ViewModels
                 this.RaisePropertyChanged();
             }
         }
+        #endregion
 
+        #region PortSendReceiveState
         private string _ComPortState = "";
 
         public string ComPortState
@@ -197,6 +200,7 @@ namespace BaoYuanSerial.ViewModels
                 this.RaisePropertyChanged();
             }
         }
+        #endregion
 
         private ReceivePara _ReceivePara = new ReceivePara();
         public ReceivePara ReceivePara
@@ -234,8 +238,38 @@ namespace BaoYuanSerial.ViewModels
             }
         }
 
-        
+        private string _SendTxt = "";
 
+        public string SendTxt
+        {
+            get => _SendTxt;
+            set
+            {
+                _SendTxt = value;
+                this.RaisePropertyChanged();
+            }
+        }
+        private ObservableCollection<string> _SendTxtHistory = new ObservableCollection<string>() { "123" };
 
+        public ObservableCollection<string> SendTxtHistory
+        {
+            get => _SendTxtHistory;
+            set
+            {
+                _SendTxtHistory = value;
+                this.RaisePropertyChanged();
+            }
+        }
+
+        private int _SendTxtHisSelIndex = 0;
+        public int SendTxtHisSelIndex
+        {
+            get => _SendTxtHisSelIndex;
+            set
+            {
+                _SendTxtHisSelIndex = value;
+                this.RaisePropertyChanged();
+            }
+        }
     }
 }

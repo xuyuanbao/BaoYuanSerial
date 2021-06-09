@@ -15,5 +15,6 @@ namespace BaoYuanSerial
         public static SendPara SendPara = new SendPara();
         public static LogPara LogPara = new LogPara();
         public static DisplayPara DisplayPara = new DisplayPara();
+       
     }
 }

@@ -77,10 +77,11 @@ namespace BaoYuanSerial.Views
         {
             var window = new OptionsWindow
             {
+                DataContext = new OptionsViewModel(),
                 Topmost = true,
                 CanResize = false
             };
-            window.ShowDialog(this);
+            window.Show();
             window.Activate();
 
             _windows.Add(window);
@@ -90,6 +91,7 @@ namespace BaoYuanSerial.Views
         {
             var window = new ToolBoxWindow
             {
+                DataContext=new ToolBoxViewModel(),
                 Topmost = true,
                 CanResize = false
             };

@@ -69,7 +69,8 @@
 				<Image Source="/Assets/hide-left.png"/>
 			</Button>
 			<Button Name="tlbtnOptions" Grid.Column="6" ToolTip.Tip="Options"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					HorizontalContentAlignment="Stretch" >
 				<Image Source="/Assets/options.png"/>
 			</Button>
 		</Grid>
@@ -182,8 +183,12 @@
 						 ScrollViewer.VerticalScrollBarVisibility="Auto"
 						 TextWrapping="Wrap" Text="{Binding Path=ReciveTxt}"
 						 />
-				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5"/>
-				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5"
+						 Text="{Binding SendTxt}"
+						 />
+				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"
+						  SelectedIndex="{Binding SendTxtHisSelIndex}" Items="{Binding SendTxtHistory}"
+						  />
 				<Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
 						HorizontalAlignment="Stretch" Margin="0,0,5,5"
 						Content="Send" FontSize="15" Padding="0" 

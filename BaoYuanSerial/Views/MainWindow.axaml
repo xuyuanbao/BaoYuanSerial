@@ -2,7 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:BaoYuanSerial.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"		
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:i="using:Avalonia.Xaml.Interactivity"
+		xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
         x:Class="BaoYuanSerial.Views.MainWindow"
 		WindowStartupLocation="CenterScreen"
@@ -45,36 +47,51 @@
 		</Menu>
 		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,*">
 			<Button Grid.Column="0" ToolTip.Tip="Save Log" 
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Command="{Binding OnLogCommand}"
+					Background="{Binding LogBtnBackColor}"
+					>
 				<Image Source="/Assets/save.png"/>				
 			</Button>
 			<Button Grid.Column="1" ToolTip.Tip="Start"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Command="{Binding OnStartCommand}" IsEnabled="{Binding IsStartCan}"				    
+					>
 				<Image Source="/Assets/start.png"/>
 			</Button>
 			<Button Grid.Column="2" ToolTip.Tip="Pause"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Command="{Binding OnPauseCommand}" IsEnabled="{Binding IsPauseCan}"					
+					Background="{Binding PauseBtnBackColor}"
+					>
 				<Image Source="/Assets/pause.png"/>
 			</Button>
 			<Button Grid.Column="3" ToolTip.Tip="Stop"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Command="{Binding OnStopCommand}" IsEnabled="{Binding IsStopCan}"					
+					>
 				<Image Source="/Assets/stop.png"/>
 			</Button>
 			<Button Grid.Column="4" ToolTip.Tip="Clear"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Command="{Binding OnClearCommand}"
+					>
 				<Image Source="/Assets/clear.png"/>
 			</Button>
 			<Button Grid.Column="5" ToolTip.Tip="Hide Left"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					Name="btnHideLeft"					
+					>
 				<Image Source="/Assets/hide-left.png"/>
 			</Button>
 			<Button Name="tlbtnOptions" Grid.Column="6" ToolTip.Tip="Options"
-					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+					HorizontalContentAlignment="Stretch" >
 				<Image Source="/Assets/options.png"/>
 			</Button>
 		</Grid>
 		<SplitView Grid.Row="2" IsPaneOpen="True"
-           DisplayMode="Inline"
+           DisplayMode="Inline" Name="viewSplit"
            OpenPaneLength="300">
 			<SplitView.Pane>
 				<Grid RowDefinitions="9*,9*,6*">
@@ -89,6 +106,7 @@
 						<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" 
 								  VerticalAlignment="Center" Margin="5,2,10,0" 
 								  Items="{Binding SerialPortList}" SelectedIndex="{Binding PortNameIndex}"
+								  
 								  />
 						<TextBlock Grid.Row="2" Text="BaudRate" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
@@ -141,7 +159,7 @@
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0"
 								CornerRadius="2"/>
 						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Receive"
-									 Content="Text" Margin="10,5" 
+									 Content="ASCII" Margin="10,5" 
 									 IsChecked="{Binding ReceivePara.IsText}"/>
 						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Receive"
 									 Content="Hex" Margin="10,5" 
@@ -159,18 +177,25 @@
 					</Grid>
 					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,1.5*,40">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
-							   Text="Send Settings" Margin="5,0"/>
+							   Text="Send Settings" Margin="5,0"/>						
 						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,5"
 								CornerRadius="2"/>
 						<RadioButton Grid.Row="2" Grid.Column="0" GroupName="Send"
-									 Content="Text" Margin="10,5" />
+									 Content="ASCII" Margin="10,5" 
+									 IsChecked="{Binding SendPara.IsText}"
+									 />
 						<RadioButton Grid.Row="2" Grid.Column="1" GroupName="Send"
-									 Content="Hex" Margin="10,5" />
+									 Content="Hex" Margin="10,5" 
+									 IsChecked="{Binding SendPara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Loop" Margin="10,0,5,5" />
-						<NumericUpDown Grid.Row="3" Grid.Column="1" 
-									   Value="900" VerticalAlignment="Center" Margin="10,0,5,15" />
+									 Content="Loop" Margin="10,0,5,5"
+									
+								    Name="chbLoop"  >
+							
+						</CheckBox>
+						<NumericUpDown Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,5,15"
+									   Value="{Binding SendPara.LoopInterval}"  />
 						<TextBlock Grid.Row="3" Grid.Column="2"
 										Text="ms" VerticalAlignment="Center" Margin="5,5,5,10" />
 					</Grid>
@@ -178,16 +203,28 @@
 			</SplitView.Pane>
 
 			<Grid RowDefinitions="*,70,40" ColumnDefinitions="*,100">
-				<TextBox Grid.Row="0" Grid.ColumnSpan="2" IsReadOnly="True" Margin="0,0,5,5"
-						 ScrollViewer.VerticalScrollBarVisibility="Auto"
-						 TextWrapping="Wrap" Text="{Binding Path=ReciveTxt}"
+
+				<TextBox Grid.Row="0" Grid.ColumnSpan="2" IsReadOnly="False" Margin="0,0,5,5"
+						 ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
+						 VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+						 TextWrapping="Wrap" Text="{Binding Path=ReceiveTxt}" 
 						 />
-				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5"/>
-				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"/>
+				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+							TextWrapping="Wrap"
+						 Text="{Binding SendTxt}"
+						 />
+				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"
+						  SelectedIndex="{Binding SendTxtHisSelIndex}" Items="{Binding SendTxtHistory}"
+						 
+						  Name="CbbHistory"
+						  />
 				<Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
 						HorizontalAlignment="Stretch" Margin="0,0,5,5"
 						Content="Send" FontSize="15" Padding="0" 
-						VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+						VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+						Command="{Binding OnSendCommand}" 
+						IsEnabled="{Binding SendCmdIsEnable}"
+						/>
 			</Grid>
 		</SplitView>
 		<Grid Grid.Row="3" ColumnDefinitions="200,200,200">

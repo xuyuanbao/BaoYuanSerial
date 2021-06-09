@@ -82,7 +82,7 @@ namespace BaoYuanSerial.Models
             }
         }
 
-        private string _TimeFormat = "[hh:mm:ss.zzz] ";
+        private string _TimeFormat = "[HH:mm:ss.fff] ";
 
         public string TimeFormat
         {
@@ -90,9 +90,20 @@ namespace BaoYuanSerial.Models
             set
             {
                 _TimeFormat = value;
+                TimeFormatTip= System.DateTime.Now.ToString(_TimeFormat);
                 this.RaisePropertyChanged();
             }
         }
+        private string _TimeFormatTip =System.DateTime.Now.ToString( "[HH:mm:ss.fff] ");
 
+        public string TimeFormatTip
+        {
+            get => _TimeFormatTip;
+            set
+            {
+                _TimeFormatTip = value;
+                this.RaisePropertyChanged();
+            }
+        }
     }
 }

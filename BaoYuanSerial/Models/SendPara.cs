@@ -114,14 +114,14 @@ namespace BaoYuanSerial.Models
                 this.RaisePropertyChanged();
             }
         }
-        private bool _FormatCLNR = false;
+        private bool _FormatCRNL = false;
 
-        public bool FormatCLNR
+        public bool FormatCRNL
         {
-            get => _FormatCLNR;
+            get => _FormatCRNL;
             set
             {
-                _FormatCLNR = value;
+                _FormatCRNL = value;
                 this.RaisePropertyChanged();
             }
         }

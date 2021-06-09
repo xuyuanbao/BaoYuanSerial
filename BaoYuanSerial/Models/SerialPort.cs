@@ -32,11 +32,9 @@ namespace BaoYuanSerial.Models
         public void StartMonitorReceive()
         {
 
-            Sp_DataReceived(new object(), new SerialDataReceivedEventArgs(SerialData.Eof));
+            Sp_DataReceived(this, new SerialDataReceivedEventArgs(SerialData.Eof));
         }
-        /// <summary>
-        /// 获取计算机的所有串口
-        /// </summary>
+
         public static ObservableCollection<string> GetSerials()
         {
             ObservableCollection<string> lsStr = new ObservableCollection<string>();
@@ -53,6 +51,5 @@ namespace BaoYuanSerial.Models
             }
             return lsStr;
         }
-
     }
 }

@@ -9,6 +9,7 @@ namespace BaoYuanSerial.Util
 {
    public class FileTool
     {
+        private static readonly object lockobj = new object();
         /// <summary>
         /// 保存错误记录
         /// </summary>
@@ -73,28 +74,31 @@ namespace BaoYuanSerial.Util
         }
 
         public static bool SaveDebugLog(string filepath,string str)
-        {           
-            try
+        {   
+            lock(lockobj)
             {
-                StreamWriter sw;
-                if (!File.Exists(filepath))
+                try
                 {
-                    sw = File.CreateText(filepath);
-                }
-                else
-                {
-                    sw = File.AppendText(filepath);
-                }
-                sw.WriteLine(str + "\r\n");
-                sw.Flush();  //清空缓冲区
-                sw.Close();
+                    StreamWriter sw;
+                    if (!File.Exists(filepath))
+                    {
+                        sw = File.CreateText(filepath);
+                    }
+                    else
+                    {
+                        sw = File.AppendText(filepath);
+                    }
+                    sw.WriteLine(str + "\r\n");
+                    sw.Flush();  //清空缓冲区
+                    sw.Close();
 
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return true;
         }
 
 

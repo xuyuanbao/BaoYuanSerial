@@ -1,0 +1,898 @@
+[
+	{
+		"Binary": "0",
+		"Decimal": "0",
+		"Hex": "0",
+		"AbbrGlyph": "NUL",
+		"Discription": "\\0 Null character"
+	},
+	{
+		"Binary": "1",
+		"Decimal": "1",
+		"Hex": "1",
+		"AbbrGlyph": "SOH",
+		"Discription": "Start of Header"
+	},
+	{
+		"Binary": "10",
+		"Decimal": "2",
+		"Hex": "2",
+		"AbbrGlyph": "STX",
+		"Discription": "Start of Text"
+	},
+	{
+		"Binary": "11",
+		"Decimal": "3",
+		"Hex": "3",
+		"AbbrGlyph": "ETX",
+		"Discription": "End of Text"
+	},
+	{
+		"Binary": "100",
+		"Decimal": "4",
+		"Hex": "4",
+		"AbbrGlyph": "EOT",
+		"Discription": "End of Transmission"
+	},
+	{
+		"Binary": "101",
+		"Decimal": "5",
+		"Hex": "5",
+		"AbbrGlyph": "ENQ",
+		"Discription": "Enquiry"
+	},
+	{
+		"Binary": "110",
+		"Decimal": "6",
+		"Hex": "6",
+		"AbbrGlyph": "ACK",
+		"Discription": "Acknowledgment"
+	},
+	{
+		"Binary": "111",
+		"Decimal": "7",
+		"Hex": "7",
+		"AbbrGlyph": "BEL",
+		"Discription": "\\a Bell"
+	},
+	{
+		"Binary": "1000",
+		"Decimal": "8",
+		"Hex": "8",
+		"AbbrGlyph": "BS",
+		"Discription": "\\b Backspace"
+	},
+	{
+		"Binary": "1001",
+		"Decimal": "9",
+		"Hex": "9",
+		"AbbrGlyph": "HT",
+		"Discription": "\\t Horizontal Tab"
+	},
+	{
+		"Binary": "1010",
+		"Decimal": "10",
+		"Hex": "A",
+		"AbbrGlyph": "LF",
+		"Discription": "\\n Line feed"
+	},
+	{
+		"Binary": "1011",
+		"Decimal": "11",
+		"Hex": "B",
+		"AbbrGlyph": "VT",
+		"Discription": "\\v Vertical Tab"
+	},
+	{
+		"Binary": "1100",
+		"Decimal": "12",
+		"Hex": "C",
+		"AbbrGlyph": "FF",
+		"Discription": "\\f Form feed"
+	},
+	{
+		"Binary": "1101",
+		"Decimal": "13",
+		"Hex": "D",
+		"AbbrGlyph": "CR",
+		"Discription": "\\r Carriage return"
+	},
+	{
+		"Binary": "1110",
+		"Decimal": "14",
+		"Hex": "E",
+		"AbbrGlyph": "SO",
+		"Discription": "Shift Out"
+	},
+	{
+		"Binary": "1111",
+		"Decimal": "15",
+		"Hex": "F",
+		"AbbrGlyph": "SI",
+		"Discription": "Shift In"
+	},
+	{
+		"Binary": "10000",
+		"Decimal": "16",
+		"Hex": "10",
+		"AbbrGlyph": "DLE",
+		"Discription": "Data Link Escape"
+	},
+	{
+		"Binary": "10001",
+		"Decimal": "17",
+		"Hex": "11",
+		"AbbrGlyph": "DC1",
+		"Discription": "Device Control 1 (oft. XON)"
+	},
+	{
+		"Binary": "10010",
+		"Decimal": "18",
+		"Hex": "12",
+		"AbbrGlyph": "DC2",
+		"Discription": "Device Control 2"
+	},
+	{
+		"Binary": "10011",
+		"Decimal": "19",
+		"Hex": "13",
+		"AbbrGlyph": "DC3",
+		"Discription": "Device Control 3 (oft. XOFF)"
+	},
+	{
+		"Binary": "10100",
+		"Decimal": "20",
+		"Hex": "14",
+		"AbbrGlyph": "DC4",
+		"Discription": "Device Control 4"
+	},
+	{
+		"Binary": "10101",
+		"Decimal": "21",
+		"Hex": "15",
+		"AbbrGlyph": "NAK",
+		"Discription": "Negative Acknowledgement"
+	},
+	{
+		"Binary": "10110",
+		"Decimal": "22",
+		"Hex": "16",
+		"AbbrGlyph": "SYN",
+		"Discription": "Synchronous idle"
+	},
+	{
+		"Binary": "10111",
+		"Decimal": "23",
+		"Hex": "17",
+		"AbbrGlyph": "ETB",
+		"Discription": "End of Transmission Block"
+	},
+	{
+		"Binary": "11000",
+		"Decimal": "24",
+		"Hex": "18",
+		"AbbrGlyph": "CAN",
+		"Discription": "Cancel"
+	},
+	{
+		"Binary": "11001",
+		"Decimal": "25",
+		"Hex": "19",
+		"AbbrGlyph": "EM",
+		"Discription": "End of Medium"
+	},
+	{
+		"Binary": "11010",
+		"Decimal": "26",
+		"Hex": "1A",
+		"AbbrGlyph": "SUB",
+		"Discription": "Substitute"
+	},
+	{
+		"Binary": "11011",
+		"Decimal": "27",
+		"Hex": "1B",
+		"AbbrGlyph": "ESC",
+		"Discription": "\\e Escape"
+	},
+	{
+		"Binary": "11100",
+		"Decimal": "28",
+		"Hex": "1C",
+		"AbbrGlyph": "FS",
+		"Discription": "File Separator"
+	},
+	{
+		"Binary": "11101",
+		"Decimal": "29",
+		"Hex": "1D",
+		"AbbrGlyph": "GS",
+		"Discription": "Group Separator"
+	},
+	{
+		"Binary": "11110",
+		"Decimal": "30",
+		"Hex": "1E",
+		"AbbrGlyph": "RS",
+		"Discription": "Record Separator"
+	},
+	{
+		"Binary": "11111",
+		"Decimal": "31",
+		"Hex": "1F",
+		"AbbrGlyph": "US",
+		"Discription": "Unit Separator"
+	},
+	{
+		"Binary": "100000",
+		"Decimal": "32",
+		"Hex": "20",
+		"AbbrGlyph": " ",
+		"Discription": "Space"
+	},
+	{
+		"Binary": "100001",
+		"Decimal": "33",
+		"Hex": "21",
+		"AbbrGlyph": "!",
+		"Discription": ""
+	},
+	{
+		"Binary": "100010",
+		"Decimal": "34",
+		"Hex": "22",
+		"AbbrGlyph": "\"",
+		"Discription": ""
+	},
+	{
+		"Binary": "100011",
+		"Decimal": "35",
+		"Hex": "23",
+		"AbbrGlyph": "#",
+		"Discription": ""
+	},
+	{
+		"Binary": "100100",
+		"Decimal": "36",
+		"Hex": "24",
+		"AbbrGlyph": "$",
+		"Discription": ""
+	},
+	{
+		"Binary": "100101",
+		"Decimal": "37",
+		"Hex": "25",
+		"AbbrGlyph": "%",
+		"Discription": ""
+	},
+	{
+		"Binary": "100110",
+		"Decimal": "38",
+		"Hex": "26",
+		"AbbrGlyph": "&",
+		"Discription": ""
+	},
+	{
+		"Binary": "100111",
+		"Decimal": "39",
+		"Hex": "27",
+		"AbbrGlyph": "'",
+		"Discription": ""
+	},
+	{
+		"Binary": "101000",
+		"Decimal": "40",
+		"Hex": "28",
+		"AbbrGlyph": "(",
+		"Discription": ""
+	},
+	{
+		"Binary": "101001",
+		"Decimal": "41",
+		"Hex": "29",
+		"AbbrGlyph": ")",
+		"Discription": ""
+	},
+	{
+		"Binary": "101010",
+		"Decimal": "42",
+		"Hex": "2A",
+		"AbbrGlyph": "*",
+		"Discription": ""
+	},
+	{
+		"Binary": "101011",
+		"Decimal": "43",
+		"Hex": "2B",
+		"AbbrGlyph": "+",
+		"Discription": ""
+	},
+	{
+		"Binary": "101100",
+		"Decimal": "44",
+		"Hex": "2C",
+		"AbbrGlyph": ",",
+		"Discription": ""
+	},
+	{
+		"Binary": "101101",
+		"Decimal": "45",
+		"Hex": "2D",
+		"AbbrGlyph": "-",
+		"Discription": ""
+	},
+	{
+		"Binary": "101110",
+		"Decimal": "46",
+		"Hex": "2E",
+		"AbbrGlyph": ".",
+		"Discription": ""
+	},
+	{
+		"Binary": "101111",
+		"Decimal": "47",
+		"Hex": "2F",
+		"AbbrGlyph": "/",
+		"Discription": ""
+	},
+	{
+		"Binary": "110000",
+		"Decimal": "48",
+		"Hex": "30",
+		"AbbrGlyph": "0",
+		"Discription": ""
+	},
+	{
+		"Binary": "110001",
+		"Decimal": "49",
+		"Hex": "31",
+		"AbbrGlyph": "1",
+		"Discription": ""
+	},
+	{
+		"Binary": "110010",
+		"Decimal": "50",
+		"Hex": "32",
+		"AbbrGlyph": "2",
+		"Discription": ""
+	},
+	{
+		"Binary": "110011",
+		"Decimal": "51",
+		"Hex": "33",
+		"AbbrGlyph": "3",
+		"Discription": ""
+	},
+	{
+		"Binary": "110100",
+		"Decimal": "52",
+		"Hex": "34",
+		"AbbrGlyph": "4",
+		"Discription": ""
+	},
+	{
+		"Binary": "110101",
+		"Decimal": "53",
+		"Hex": "35",
+		"AbbrGlyph": "5",
+		"Discription": ""
+	},
+	{
+		"Binary": "110110",
+		"Decimal": "54",
+		"Hex": "36",
+		"AbbrGlyph": "6",
+		"Discription": ""
+	},
+	{
+		"Binary": "110111",
+		"Decimal": "55",
+		"Hex": "37",
+		"AbbrGlyph": "7",
+		"Discription": ""
+	},
+	{
+		"Binary": "111000",
+		"Decimal": "56",
+		"Hex": "38",
+		"AbbrGlyph": "8",
+		"Discription": ""
+	},
+	{
+		"Binary": "111001",
+		"Decimal": "57",
+		"Hex": "39",
+		"AbbrGlyph": "9",
+		"Discription": ""
+	},
+	{
+		"Binary": "111010",
+		"Decimal": "58",
+		"Hex": "3A",
+		"AbbrGlyph": ":",
+		"Discription": ""
+	},
+	{
+		"Binary": "111011",
+		"Decimal": "59",
+		"Hex": "3B",
+		"AbbrGlyph": ";",
+		"Discription": ""
+	},
+	{
+		"Binary": "111100",
+		"Decimal": "60",
+		"Hex": "3C",
+		"AbbrGlyph": "<",
+		"Discription": ""
+	},
+	{
+		"Binary": "111101",
+		"Decimal": "61",
+		"Hex": "3D",
+		"AbbrGlyph": "=",
+		"Discription": ""
+	},
+	{
+		"Binary": "111110",
+		"Decimal": "62",
+		"Hex": "3E",
+		"AbbrGlyph": ">",
+		"Discription": ""
+	},
+	{
+		"Binary": "111111",
+		"Decimal": "63",
+		"Hex": "3F",
+		"AbbrGlyph": "?",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000000",
+		"Decimal": "64",
+		"Hex": "40",
+		"AbbrGlyph": "@",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000001",
+		"Decimal": "65",
+		"Hex": "41",
+		"AbbrGlyph": "A",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000010",
+		"Decimal": "66",
+		"Hex": "42",
+		"AbbrGlyph": "B",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000011",
+		"Decimal": "67",
+		"Hex": "43",
+		"AbbrGlyph": "C",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000100",
+		"Decimal": "68",
+		"Hex": "44",
+		"AbbrGlyph": "D",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000101",
+		"Decimal": "69",
+		"Hex": "45",
+		"AbbrGlyph": "E",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000110",
+		"Decimal": "70",
+		"Hex": "46",
+		"AbbrGlyph": "F",
+		"Discription": ""
+	},
+	{
+		"Binary": "1000111",
+		"Decimal": "71",
+		"Hex": "47",
+		"AbbrGlyph": "G",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001000",
+		"Decimal": "72",
+		"Hex": "48",
+		"AbbrGlyph": "H",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001001",
+		"Decimal": "73",
+		"Hex": "49",
+		"AbbrGlyph": "I",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001010",
+		"Decimal": "74",
+		"Hex": "4A",
+		"AbbrGlyph": "J",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001011",
+		"Decimal": "75",
+		"Hex": "4B",
+		"AbbrGlyph": "K",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001100",
+		"Decimal": "76",
+		"Hex": "4C",
+		"AbbrGlyph": "L",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001101",
+		"Decimal": "77",
+		"Hex": "4D",
+		"AbbrGlyph": "M",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001110",
+		"Decimal": "78",
+		"Hex": "4E",
+		"AbbrGlyph": "N",
+		"Discription": ""
+	},
+	{
+		"Binary": "1001111",
+		"Decimal": "79",
+		"Hex": "4F",
+		"AbbrGlyph": "O",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010000",
+		"Decimal": "80",
+		"Hex": "50",
+		"AbbrGlyph": "P",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010001",
+		"Decimal": "81",
+		"Hex": "51",
+		"AbbrGlyph": "Q",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010010",
+		"Decimal": "82",
+		"Hex": "52",
+		"AbbrGlyph": "R",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010011",
+		"Decimal": "83",
+		"Hex": "53",
+		"AbbrGlyph": "S",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010100",
+		"Decimal": "84",
+		"Hex": "54",
+		"AbbrGlyph": "T",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010101",
+		"Decimal": "85",
+		"Hex": "55",
+		"AbbrGlyph": "U",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010110",
+		"Decimal": "86",
+		"Hex": "56",
+		"AbbrGlyph": "V",
+		"Discription": ""
+	},
+	{
+		"Binary": "1010111",
+		"Decimal": "87",
+		"Hex": "57",
+		"AbbrGlyph": "W",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011000",
+		"Decimal": "88",
+		"Hex": "58",
+		"AbbrGlyph": "X",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011001",
+		"Decimal": "89",
+		"Hex": "59",
+		"AbbrGlyph": "Y",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011010",
+		"Decimal": "90",
+		"Hex": "5A",
+		"AbbrGlyph": "Z",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011011",
+		"Decimal": "91",
+		"Hex": "5B",
+		"AbbrGlyph": "[",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011100",
+		"Decimal": "92",
+		"Hex": "5C",
+		"AbbrGlyph": "\\",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011101",
+		"Decimal": "93",
+		"Hex": "5D",
+		"AbbrGlyph": "]",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011110",
+		"Decimal": "94",
+		"Hex": "5E",
+		"AbbrGlyph": "^",
+		"Discription": ""
+	},
+	{
+		"Binary": "1011111",
+		"Decimal": "95",
+		"Hex": "5F",
+		"AbbrGlyph": "_",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100000",
+		"Decimal": "96",
+		"Hex": "60",
+		"AbbrGlyph": "`",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100001",
+		"Decimal": "97",
+		"Hex": "61",
+		"AbbrGlyph": "a",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100010",
+		"Decimal": "98",
+		"Hex": "62",
+		"AbbrGlyph": "b",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100011",
+		"Decimal": "99",
+		"Hex": "63",
+		"AbbrGlyph": "c",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100100",
+		"Decimal": "100",
+		"Hex": "64",
+		"AbbrGlyph": "d",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100101",
+		"Decimal": "101",
+		"Hex": "65",
+		"AbbrGlyph": "e",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100110",
+		"Decimal": "102",
+		"Hex": "66",
+		"AbbrGlyph": "f",
+		"Discription": ""
+	},
+	{
+		"Binary": "1100111",
+		"Decimal": "103",
+		"Hex": "67",
+		"AbbrGlyph": "g",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101000",
+		"Decimal": "104",
+		"Hex": "68",
+		"AbbrGlyph": "h",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101001",
+		"Decimal": "105",
+		"Hex": "69",
+		"AbbrGlyph": "i",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101010",
+		"Decimal": "106",
+		"Hex": "6A",
+		"AbbrGlyph": "j",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101011",
+		"Decimal": "107",
+		"Hex": "6B",
+		"AbbrGlyph": "k",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101100",
+		"Decimal": "108",
+		"Hex": "6C",
+		"AbbrGlyph": "l",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101101",
+		"Decimal": "109",
+		"Hex": "6D",
+		"AbbrGlyph": "m",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101110",
+		"Decimal": "110",
+		"Hex": "6E",
+		"AbbrGlyph": "n",
+		"Discription": ""
+	},
+	{
+		"Binary": "1101111",
+		"Decimal": "111",
+		"Hex": "6F",
+		"AbbrGlyph": "o",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110000",
+		"Decimal": "112",
+		"Hex": "70",
+		"AbbrGlyph": "p",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110001",
+		"Decimal": "113",
+		"Hex": "71",
+		"AbbrGlyph": "q",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110010",
+		"Decimal": "114",
+		"Hex": "72",
+		"AbbrGlyph": "r",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110011",
+		"Decimal": "115",
+		"Hex": "73",
+		"AbbrGlyph": "s",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110100",
+		"Decimal": "116",
+		"Hex": "74",
+		"AbbrGlyph": "t",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110101",
+		"Decimal": "117",
+		"Hex": "75",
+		"AbbrGlyph": "u",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110110",
+		"Decimal": "118",
+		"Hex": "76",
+		"AbbrGlyph": "v",
+		"Discription": ""
+	},
+	{
+		"Binary": "1110111",
+		"Decimal": "119",
+		"Hex": "77",
+		"AbbrGlyph": "w",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111000",
+		"Decimal": "120",
+		"Hex": "78",
+		"AbbrGlyph": "x",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111001",
+		"Decimal": "121",
+		"Hex": "79",
+		"AbbrGlyph": "y",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111010",
+		"Decimal": "122",
+		"Hex": "7A",
+		"AbbrGlyph": "z",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111011",
+		"Decimal": "123",
+		"Hex": "7B",
+		"AbbrGlyph": "{",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111100",
+		"Decimal": "124",
+		"Hex": "7C",
+		"AbbrGlyph": "|",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111101",
+		"Decimal": "125",
+		"Hex": "7D",
+		"AbbrGlyph": "}",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111110",
+		"Decimal": "126",
+		"Hex": "7E",
+		"AbbrGlyph": "~",
+		"Discription": ""
+	},
+	{
+		"Binary": "1111111",
+		"Decimal": "127",
+		"Hex": "7F",
+		"AbbrGlyph": "DEL",
+		"Discription": ""
+	}
+]

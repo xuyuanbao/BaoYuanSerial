@@ -50,7 +50,7 @@ namespace BaoYuanSerial.Views
             CbbHistory.SelectionChanged += SendHistoryComb_Changed;
             _chbLoop = this.FindControl<CheckBox>("chbLoop");            
             _chbLoop.Checked += LoopChbox_Checked;  //当checkbox未选中转为选中时触发。
-            _chbLoop.Unchecked += LoopChbox_UnChecked;  //当checkbox选中转为未选中时触发
+            _chbLoop.Unchecked += LoopChbox_UnChecked;  //当checkbox选中转为未选中时触发           
 
         }
                

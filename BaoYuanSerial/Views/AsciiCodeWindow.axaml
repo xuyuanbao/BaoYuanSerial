@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vm="using:BaoYuanSerial.ViewModels"
+         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"		
+		Width="500" Height="350"
+        x:Class="BaoYuanSerial.ViewModels.AsciiCodeWindow"
+		WindowStartupLocation="CenterScreen"
+		Icon="/Assets/yinyang_64.png"
+        Title="AsciiCodeWindow">
+	<Design.DataContext>
+		<vm:AsciiCodeViewModel/>
+	</Design.DataContext>
+	<Grid RowDefinitions="*,40" ColumnDefinitions="*,100" Margin="5">
+		<Border BorderBrush="LightBlue" BorderThickness="1" CornerRadius="3"
+				Grid.ColumnSpan="2"
+				/>
+		<DataGrid Grid.ColumnSpan="2"
+			Items="{Binding AsciiList}" AutoGenerateColumns="True"
+				  VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"
+				  HorizontalAlignment="Stretch" IsReadOnly="True"
+				  SelectionMode="Extended"
+				  >
+			
+		</DataGrid>
+		<Button Grid.Row="1" Grid.Column="1" Content="OK" VerticalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Stretch" Margin="5" Name="btnOK"/>
+	</Grid>
+</Window>

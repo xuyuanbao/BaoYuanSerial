@@ -46,9 +46,6 @@ namespace BaoYuanSerial.Views
                     
                 }
             };
-
-            DataContextChanged += OptionsWindow_DataContextChanged;
-
         }
 
         private void InitializeComponent()
@@ -57,14 +54,5 @@ namespace BaoYuanSerial.Views
 
 
         }
-
-        private void OptionsWindow_DataContextChanged(object sender, EventArgs e)
-        {
-            var vm = DataContext as OptionsViewModel;
-            //vm.NoteEditClicked += Note_Edit;
-            //vm.NoteDeleteClicked += Note_Delete;
-        }
-
-       
     }
 }

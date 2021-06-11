@@ -58,7 +58,7 @@ namespace BaoYuanSerial.ViewModels
         {
             try
             {
-                // SendTxt´ý¸ñÊ½»¯ Èç¹ûÊÇHEXÒªÈ¥µôËùÓÐ¿Õ¸ñ
+                // SendTxtï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½HEXÒªÈ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿Õ¸ï¿½
                // string cmd = SendTxt.Replace("", " ");
                 if (SendTxt.Trim() == "") return;
                 string txtsend = SendTxt.Trim().Replace(" ", "").ToUpper();
@@ -81,7 +81,7 @@ namespace BaoYuanSerial.ViewModels
                         txtsend += "0D";
                     }
                 }
-                int byteNum = 0;   //´Ë´Î·¢ÁË¼¸¸ö×Ö½Ú
+                int byteNum = 0;   //ï¿½Ë´Î·ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ö½ï¿½
 
                 if (SendPara.IsHex)
                 {
@@ -119,7 +119,7 @@ namespace BaoYuanSerial.ViewModels
                     }
                 }
 
-                //ÒÑ¾­·¢ËÍÁË¼¸¸ö×Ö½Ú
+                //ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ö½ï¿½
                 _SendedBytesNum += byteNum;
                 SendBytesStr = "Tx: "+_SendedBytesNum+" Bytes";
                 AddSendHistory(SendTxt);
@@ -486,7 +486,7 @@ namespace BaoYuanSerial.ViewModels
             }
         }
         /// <summary>
-        /// ÒÑ¾­·¢ËÍµÄ×Ö½ÚÊý
+        /// ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½Ö½ï¿½ï¿½ï¿½
         /// </summary>
         private long _SendedBytesNum = 0;
 
@@ -512,7 +512,7 @@ namespace BaoYuanSerial.ViewModels
             }
         }
         /// <summary>
-        /// ÒÑ¾­½ÓÊÕµÄ×Ö½ÚÊý
+        /// ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½Ö½ï¿½ï¿½ï¿½
         /// </summary>
         private long _ReceivedBytesNum = 0;
         private string _ReceiveBytesStr="Rx:0 Bytes";
@@ -642,7 +642,7 @@ namespace BaoYuanSerial.ViewModels
             }
         }
 
-        #region Log ´¦Àí
+        #region Log
 
         private List<string> _LogList = new List<string>();
 
@@ -698,7 +698,7 @@ namespace BaoYuanSerial.ViewModels
                     Util.FileTool.SaveFailLog(ex.Message);
                     return false;
                 }
-                // Èç¹ûÎÄ¼þ´æÔÚ,ÇÒÎÄ¼þ´óÐ¡´óÓÚÉè¶¨µÄÎÄ¼þ´óÐ¡£¬ÔòÖØ½¨ÐÂÎÄµµ
+                // ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Äµï¿½
                 if (fileInfo != null && fileInfo.Exists)
                 {
                     System.Diagnostics.FileVersionInfo info = System.Diagnostics.FileVersionInfo.GetVersionInfo(LogPara.FileName);

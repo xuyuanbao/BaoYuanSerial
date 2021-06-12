@@ -37,7 +37,7 @@ namespace BaoYuanSerial.ViewModels
                 this.RaisePropertyChanged();
             }
         }
-        private string _Blog = "Blog:https://blog.csdn.net/lvyiwuhen";
+        private string _Blog = "Email:xuyuanbaoxyb@163.com\r\nWeChat/Phone:18694923164\r\nQQ:416315797\r\n\r\nBlog: https://blog.csdn.net/lvyiwuhen\r\nGitHub: https://github.com/xuyuanbao/BaoYuanSerial\r\n";
         public string Blog
         {
             get => _Blog;

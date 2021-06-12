@@ -77,7 +77,7 @@ namespace BaoYuanSerial.Views
                         FontFamily = "Microsoft YaHei,Simsun",
                         WindowStartupLocation = Avalonia.Controls.WindowStartupLocation.CenterScreen,
 #if Ubuntu
-                    Style = Style.UbuntuLinux
+                    Style =MessageBox.Avalonia.Enums.Style.UbuntuLinux
 #elif MSWindow
                     Style = MessageBox.Avalonia.Enums.Style.Windows
 #endif

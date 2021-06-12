@@ -23,7 +23,7 @@ namespace BaoYuanSerial.ViewModels
                 //string name = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".ascii.json";
                 //System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
                 //System.IO.Stream stream = assembly.GetManifestResourceStream(name);
-                string filename = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Assets\\ascii.json";
+                string filename = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Assets/ascii.json";
                 txtjson = File.ReadAllText(filename);
                 AsciiList = JSONHelper.DeserializeJsonToObject<ObservableCollection<AsciiJson>>(txtjson);
             }

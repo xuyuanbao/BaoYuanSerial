@@ -19,15 +19,16 @@ namespace BaoYuanSerial.Views
             var OkBtn = this.FindControl<Button>("OkBtn");
             OkBtn.Command = ReactiveCommand.Create(AboutMenuClicked);
 
-            TextBlock txtBlog = this.FindControl<TextBlock>("txtBlog");
+            TextBox txtBlog = this.FindControl<TextBox>("txtBlog");
             txtBlog.Tapped += new System.EventHandler<Avalonia.Interactivity.RoutedEventArgs>((obj,e)=> {
                 try
                 {
                     int len = txtBlog.Text.Length;
                     string html = txtBlog.Text.Substring(5, len - 5);
-                    System.Diagnostics.Process.Start("explorer.exe", html);
+
+                    Util.FileTool.OpenWebWithUrl(html);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     var msBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager
                     .GetMessageBoxStandardWindow(new MessageBoxStandardParams
@@ -43,31 +44,6 @@ namespace BaoYuanSerial.Views
                     
                 }
                 
-            });
-            TextBlock txtGit = this.FindControl<TextBlock>("txtGit");
-            txtGit.Tapped += new System.EventHandler<Avalonia.Interactivity.RoutedEventArgs>((obj, e) => {
-                try
-                {
-                    int len = txtGit.Text.Length;
-                    string html = txtGit.Text.Substring(7, len - 7);
-                    System.Diagnostics.Process.Start("explorer.exe", html);
-                }
-                catch (Exception ex)
-                {
-                    var msBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager
-                    .GetMessageBoxStandardWindow(new MessageBoxStandardParams
-                    {
-                        ButtonDefinitions = MessageBox.Avalonia.Enums.ButtonEnum.OkAbort,
-                        FontFamily = "Microsoft YaHei,Simsun",
-                        ContentTitle = "Err Message",
-                        ContentMessage = ex.Message,
-                        Icon = MessageBox.Avalonia.Enums.Icon.Error,
-                        Style = MessageBox.Avalonia.Enums.Style.UbuntuLinux
-                    });
-                    msBoxStandardWindow.Show();
-
-                }
-
             });
         }
 

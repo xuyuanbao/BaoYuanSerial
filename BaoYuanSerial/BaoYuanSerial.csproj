@@ -6,7 +6,7 @@
     <ApplicationIcon>Assets\yinyang_64.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>MSWindow</DefineConstants>
+    <DefineConstants>Ubuntu</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />

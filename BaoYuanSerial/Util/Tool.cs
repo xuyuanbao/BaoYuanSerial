@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BaoYuanSerial.Util
@@ -101,6 +103,32 @@ namespace BaoYuanSerial.Util
             }
         }
 
+        /// <summary>
+        /// 在Ubuntu中打开网址
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static bool OpenWebWithUrl(string url)
+        {
+            bool bret = false;
+            try
+            {
+                using var process = new Process();
+#if Ubuntu
+                process.StartInfo.FileName = "/usr/lib/firefox/firefox.sh";  ///firefox.sh
+#elif MSWindow
+                process.StartInfo.FileName ="explorer.exe";
+#endif
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.Arguments = url;
+                process.Start();
+                Thread.Sleep(1000);
+            }
+            catch
+            {
 
+            }
+            return bret;
+        }
     }
 }

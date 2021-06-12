@@ -14,8 +14,9 @@
 	<Design.DataContext>
 		<vm:OptionsViewModel/>
 	</Design.DataContext>
-	<Grid Margin="5" RowDefinitions="*,40" Background="LightGray">
-		<TabControl Background="White" SelectedIndex="{Binding OptionsTabSelectedIndex}">
+	<Grid Margin="5" RowDefinitions="*,40">
+		<TabControl Background="White" SelectedIndex="{Binding OptionsTabSelectedIndex}"
+					>
 			<TabItem Header="Receive" >
 				<Grid Margin="0,5,0,5" ColumnDefinitions="110,150,150,*" RowDefinitions="40,40,*"
 					  >
@@ -128,7 +129,8 @@
 				</Grid>
 			</TabItem>
 		</TabControl>
-		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right"  Margin="5">
+		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" 
+					Margin="0,5,5,0">
 			<Button Name="btnOK" Content="OK" Width="100" VerticalAlignment="Stretch"
 						HorizontalAlignment="Right" HorizontalContentAlignment="Center"
 					Margin="0,0,5,0" IsDefault="True" IsEnabled="True"

@@ -2,11 +2,109 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
-		Width="500" Height="350"
+		xmlns:vm="using:BaoYuanSerial.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
+		Width="500" Height="400"
         x:Class="BaoYuanSerial.Views.ToolBoxWindow"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Assets/yinyang_64.png"
         Title="ToolBoxWindow">
-  Welcome to Avalonia!
+	<Design.DataContext>
+		<vm:OptionsViewModel/>
+	</Design.DataContext>
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="FontFamily" Value="Arial" />
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="VerticalAlignment" Value="Stretch" />
+			<Setter Property="HorizontalAlignment" Value="Stretch" />
+			<Setter Property="Margin" Value="5" />
+		</Style>
+
+		<Style Selector="TextBlock">			
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+
+		<Style Selector="TextBox">			
+			<Setter Property="BorderBrush" Value="Gray" />
+			<Setter Property="Margin" Value="5" />			
+			<Setter Property="FontFamily" Value="Arial" />
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="HorizontalContentAlignment" Value="Left" />
+			
+		</Style>		
+	</Window.Styles>
+	<Grid Margin="5" >
+		<TabControl Background="White">
+			<TabItem Header="Common Check Method" >
+				<Grid RowDefinitions="*,40,40,40,40,40,*" ColumnDefinitions="100,*,120">
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="Strings"/>
+					<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+							 VerticalAlignment="Stretch" Text=""/>
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="Check Value"/>
+					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" 
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" 
+							Content="LRC" />
+					<TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text=""/>
+					<Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="XOR" />
+					<TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text=""/>
+					<Button Grid.Row="3" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="CheckSum" />
+					<TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text=""/>
+					<Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="FCS"/>
+					<TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text=""/>
+					<Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="CRC16-LoHi" ToolTip.Tip="Standard Modbus CRC16 format" />
+					<TextBlock Grid.Row="6" Grid.Column="0" Text="Full Strings"/>
+					<TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+				</Grid>			
+			</TabItem>
+			<TabItem Header="Data Conversion" >
+				<Grid RowDefinitions="40,40,40,40,40,40,40,*" ColumnDefinitions="120,*,120">
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="Decimal"/>
+					<TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To 16 Hex" />
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="Single Hex"/>
+					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To Decimal" />
+					<TextBlock Grid.Row="2" Grid.Column="0" Text="Double Hex"/>
+					<TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To Decimal" />
+					
+					<TextBlock Grid.Row="4" Grid.Column="0" Text="Integer"/>
+					<TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To 16 Hex" />
+					<TextBlock Grid.Row="5" Grid.Column="0" Text="16 Bit Hex"/>
+					<TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To Integer" />
+					<TextBlock Grid.Row="6" Grid.Column="0" Text="32 Bit Hex"/>
+					<TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Stretch"
+							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+					<Button Grid.Row="6" Grid.Column="2" VerticalAlignment="Stretch"
+							Content="To Integer" />
+					
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
 </Window>

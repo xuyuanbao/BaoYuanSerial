@@ -20,28 +20,28 @@
 	<Window.Styles>
 		<Style Selector="ComboBoxItem">
 			<Setter Property="FontSize" Value="15"/>
-		</Style>
+		</Style>		
 	</Window.Styles>
 	
 	<Grid RowDefinitions="30,32,*,25" >
 		<Menu Background="LightGray">
-			<MenuItem Header="_Tool(T)" Margin="5,0,0,0">
+			<MenuItem Header="_Tool(T)" Margin="5,5,0,0">
 				<MenuItem Header="Tool_Box" Name="ToolBoxMenu" />
 				<MenuItem Header="Ascii_Code" Name="AsciiCodeMenu" />
 		        <Separator/>
 				<MenuItem Name="OptionsMenu" Header="_Options" />
 			</MenuItem>
-			<MenuItem Header="_Help(H)">
+			<MenuItem Header="_Help(H)" Margin="5,5,0,0">
 				<MenuItem Header="_Document" />
 				<Separator/>
 				<MenuItem Name="AboutMenu" Header="_About" />
 			</MenuItem>
-			<MenuItem Header="_Language" Name="LanguageMenu">
+			<MenuItem Header="_Language" Name="LanguageMenu" Margin="5,5,0,0">
 				<MenuItem Name="ChineseMenu" Header="_Chinese" />
 				<Separator/>
-				<MenuItem Name="EnglishMenu" Header="_English" />
+				<MenuItem Name="EnglishMenu" Header="_English" Margin="5,5,0,0" />
 			</MenuItem>
-			<MenuItem Header="Do_nate" Name="DonateMenu">
+			<MenuItem Header="Do_nate" Name="DonateMenu" Margin="5,5,0,0">
 			</MenuItem>
 			
 		</Menu>
@@ -175,7 +175,7 @@
 								  IsChecked="{Binding ReceivePara.DisplayTime}"/>
 						
 					</Grid>
-					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,*" ColumnDefinitions="*,1.5*,40">
+					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,1.5*" ColumnDefinitions="*,1.5*,40">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
 							   Text="Send Settings" Margin="5,0"/>						
 						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
@@ -189,13 +189,16 @@
 									 Content="Hex" Margin="10,5" 
 									 IsChecked="{Binding SendPara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Loop" Margin="10,0,5,5"
-									
+									 Content="Loop" Margin="10,0,0,10"
+									 VerticalAlignment="Stretch" 
 								    Name="chbLoop"  >
 							
 						</CheckBox>
-						<NumericUpDown Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,5,15"
-									   Value="{Binding SendPara.LoopInterval}"  />
+						<NumericUpDown Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" 
+									   Margin="10,0,0,10" Padding="5"
+									   Value="{Binding SendPara.LoopInterval}"
+									   VerticalContentAlignment="Center"
+									   />
 						<TextBlock Grid.Row="3" Grid.Column="2"
 										Text="ms" VerticalAlignment="Center" Margin="5,5,5,10" />
 					</Grid>

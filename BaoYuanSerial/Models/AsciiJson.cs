@@ -13,9 +13,5 @@ namespace BaoYuanSerial.Models
         public string Hex { get; set; } = "";
         public string AbbrGlyph { get; set; } = "";
         public string Discription { get; set; } = "";
-    }
-    public class AsciiJsonObj
-    {
-        public List<AsciiJson> asciiJsonList=new List<AsciiJson>();
-    }
+    }    
 }

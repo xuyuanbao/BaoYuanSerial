@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ApplicationIcon>Assets\yinyang_64.ico</ApplicationIcon>
     <Win32Resource />
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>Ubuntu</DefineConstants>

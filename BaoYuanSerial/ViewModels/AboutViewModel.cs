@@ -1,4 +1,5 @@
-﻿using ReactiveUI;
+﻿using Avalonia;
+using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace BaoYuanSerial.ViewModels
         {
             get => _Version;
             set
-            {
+            {                
                 _Version = value;
                 this.RaisePropertyChanged();
             }

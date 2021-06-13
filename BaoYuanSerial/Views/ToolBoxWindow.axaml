@@ -8,9 +8,9 @@
         x:Class="BaoYuanSerial.Views.ToolBoxWindow"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Assets/yinyang_64.png"
-        Title="ToolBoxWindow">
+        Title="ToolBoxViewModel">
 	<Design.DataContext>
-		<vm:OptionsViewModel/>
+		<vm:ToolBoxViewModel/>
 	</Design.DataContext>
 	<Window.Styles>
 		<Style Selector="Button">
@@ -42,66 +42,83 @@
 				<Grid RowDefinitions="*,40,40,40,40,40,*" ColumnDefinitions="100,*,120">
 					<TextBlock Grid.Row="0" Grid.Column="0" Text="Strings"/>
 					<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
-							 VerticalAlignment="Stretch" Text=""/>
+							 VerticalAlignment="Stretch" Text="{Binding SrcStrings}"/>
 					<TextBlock Grid.Row="1" Grid.Column="0" Text="Check Value"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" 
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 ScrollViewer.VerticalScrollBarVisibility="Auto"
+						     Text="{Binding StrLRC}"
+							 />
 					<Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" 
-							Content="LRC" />
+							Content="LRC" 
+							Command="{Binding OnLRCCommand}"/>
 					<TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text=""/>
+							 Text="{Binding StrXOR}"/>
 					<Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="XOR" />
+							Content="XOR" 
+							Command="{Binding OnXORCommand}"/>
 					<TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text=""/>
+							 Text="{Binding StrCheckSum}"/>
 					<Button Grid.Row="3" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="CheckSum" />
+							Content="CheckSum" 
+							Command="{Binding OnCheckSumCommand}"
+							/>
 					<TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text=""/>
+							 Text="{Binding StrFCS}"/>
 					<Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="FCS"/>
+							Content="FCS"
+							Command="{Binding OnFCSCommand}"/>
 					<TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text=""/>
+							 Text="{Binding StrCRC16LoHi}"/>
 					<Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="CRC16-LoHi" ToolTip.Tip="Standard Modbus CRC16 format" />
+							Content="CRC16-LoHi" ToolTip.Tip="Standard Modbus CRC16 format" 
+							Command="{Binding OnCRC16LoHiCommand}"
+							/>
 					<TextBlock Grid.Row="6" Grid.Column="0" Text="Full Strings"/>
 					<TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding StrFullStr}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 				</Grid>			
 			</TabItem>
 			<TabItem Header="Data Conversion" >
-				<Grid RowDefinitions="40,40,40,40,40,40,40,*" ColumnDefinitions="120,*,120">
+				<Grid RowDefinitions="40,40,40,40,40,40,40,*" ColumnDefinitions="100,*,120">
 					<TextBlock Grid.Row="0" Grid.Column="0" Text="Decimal"/>
 					<TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding StrDecimal}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To 16 Hex" />
+							Content="To 16 Hex" 
+							Command="{Binding OnDecimalTo16HexCommand}"/>
 					<TextBlock Grid.Row="1" Grid.Column="0" Text="Single Hex"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding StrSingleHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Decimal" />
+							Content="To Decimal"
+							Command="{Binding OnSingleHexToDecimalCommand}"/>
 					<TextBlock Grid.Row="2" Grid.Column="0" Text="Double Hex"/>
 					<TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding StrDoubleHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Decimal" />
+							Content="To Decimal"
+							Command="{Binding OnDoubleHexToDecimalCommand}"
+							/>
 					
 					<TextBlock Grid.Row="4" Grid.Column="0" Text="Integer"/>
 					<TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding StrInteger}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To 16 Hex" />
+							Content="To 16 Hex" 
+							Command="{Binding OnIntegerTo16HexCommand}"/>
 					<TextBlock Grid.Row="5" Grid.Column="0" Text="16 Bit Hex"/>
 					<TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding Str16BitHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Integer" />
+							Content="To Integer" 
+							Command="{Binding On16BitHexToIntegerCommand}"/>
 					<TextBlock Grid.Row="6" Grid.Column="0" Text="32 Bit Hex"/>
 					<TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Stretch"
-							 Text="" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+							 Text="{Binding Str32BitHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="6" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Integer" />
+							Content="To Integer"
+							Command="{Binding On32BitHexToIntegerCommand}"
+							/>
 					
 				</Grid>
 			</TabItem>

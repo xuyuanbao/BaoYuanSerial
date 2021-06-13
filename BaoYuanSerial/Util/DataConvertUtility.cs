@@ -140,7 +140,7 @@ namespace BaoYuanSerial.Util
       /// <returns></returns>
       public static byte[] HexStringToByte(string strHex)
         {
-            strHex.Replace(" ", "");  //去除多余空格
+            strHex.Replace(" ", "").Replace(Environment.NewLine,"");  //去除多余空格
             int nLen = strHex.Length;
             nLen = nLen / 2;
             byte[] btArrayCmd = new byte[nLen];

@@ -19,7 +19,9 @@ https://docs.microsoft.com/zh-cn/dotnet/core/install/linux
 Create an Ubuntu program Desktop Icon article  
 https://blog.csdn.net/lvyiwuhen/article/details/117579011
 
-Microsoft Windows Interface
+Interface
 ----
-![](Img/MainUI_WIN10.png)  
+Microsoft Windows  
+![](Img/MainUI_WIN10.png)    
+Ubuntu  
 ![](Img/MainUI_Ubuntu.png)  

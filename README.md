@@ -13,7 +13,13 @@ Using
 ----
 AvaloniaUI  https://github.com/AvaloniaUI  
 
+Install .Net In Linux  
+https://docs.microsoft.com/zh-cn/dotnet/core/install/linux  
+
+Create an Ubuntu program Desktop Icon article  
+https://blog.csdn.net/lvyiwuhen/article/details/117579011
+
 Microsoft Windows Interface
 ----
-![](Img/MainUI_WIN10.png)
-![](Img/MainUI_Ubuntu.png)
+![](Img/MainUI_WIN10.png)  
+![](Img/MainUI_Ubuntu.png)  

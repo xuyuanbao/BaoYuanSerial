@@ -4,12 +4,16 @@ Welcome to use the BaoYuanSerial that is a GUI serial debug tool for Linux(Ubunt
 
 Eenvironment
 ----
-Microsoft Window: WIN10_20H2
-Linux: Ubuntu20.04
-DotNet: dotnet5.0
-Avalonia: 0.10.6
+Microsoft Window: WIN10_20H2  
+Linux: Ubuntu20.04  
+DotNet: dotnet5.0  
+Avalonia: 0.10.6  
 
+Using
+----
+AvaloniaUI  https://github.com/AvaloniaUI  
 
 Microsoft Windows Interface
 ----
 ![](Img/MainUI_WIN10.png)
+![](Img/MainUI_Ubuntu.png)

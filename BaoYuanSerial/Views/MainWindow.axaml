@@ -3,6 +3,7 @@
         xmlns:vm="using:BaoYuanSerial.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:Lan="clr-namespace:BaoYuanSerial.Util"
 		xmlns:i="using:Avalonia.Xaml.Interactivity"
 		xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
@@ -25,35 +26,35 @@
 	
 	<Grid RowDefinitions="30,32,*,25" >
 		<Menu Background="LightGray">
-			<MenuItem Header="_Tool(T)" Margin="5,5,0,0">
-				<MenuItem Header="Tool_Box" Name="ToolBoxMenu" />
-				<MenuItem Header="Ascii_Code" Name="AsciiCodeMenu" />
+			<MenuItem Header="{Lan:Localize menuTool}" Margin="5,5,0,0">
+				<MenuItem Header="{Lan:Localize menuToolBox}" Name="ToolBoxMenu" />
+				<MenuItem Header="{Lan:Localize menuAscii}" Name="AsciiCodeMenu" />
 		        <Separator/>
-				<MenuItem Name="OptionsMenu" Header="_Options" />
+				<MenuItem Name="OptionsMenu" Header="{Lan:Localize menuOptions}" />
 			</MenuItem>
-			<MenuItem Header="_Help(H)" Margin="5,5,0,0">
-				<MenuItem Header="_Document" />
+			<MenuItem Header="{Lan:Localize menuHelp}" Margin="5,5,0,0">
+				<MenuItem Header="{Lan:Localize menuDoc}" />
 				<Separator/>
-				<MenuItem Name="AboutMenu" Header="_About" />
+				<MenuItem Name="AboutMenu" Header="{Lan:Localize menuAbout}" />
 			</MenuItem>
-			<MenuItem Header="_Language" Name="LanguageMenu" Margin="5,5,0,0">
-				<MenuItem Name="ChineseMenu" Header="_Chinese" />
+			<MenuItem Header="{Lan:Localize menuLanguage}" Name="LanguageMenu" Margin="5,5,0,0">
+				<MenuItem Name="ChineseMenu" Header="Ch_inese" />
 				<Separator/>
 				<MenuItem Name="EnglishMenu" Header="_English" Margin="5,5,0,0" />
 			</MenuItem>
-			<MenuItem Header="Do_nate" Name="DonateMenu" Margin="5,5,0,0">
+			<MenuItem Header="{Lan:Localize menuDonate}" Name="DonateMenu" Margin="5,5,0,0">
 			</MenuItem>
 			
 		</Menu>
-		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,*">
-			<Button Grid.Column="0" ToolTip.Tip="Save Log" 
+		<Grid Grid.Row="1" ColumnDefinitions="32,32,32,32,32,32,32,100,*">
+			<Button Grid.Column="0" ToolTip.Tip="{Lan:Localize mvTipSaveLog}" 
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Command="{Binding OnLogCommand}"
 					Background="{Binding LogBtnBackColor}"
 					>
 				<Image Source="/Assets/save.png"/>				
 			</Button>
-			<Button Grid.Column="1" ToolTip.Tip="Start"
+			<Button Grid.Column="1" ToolTip.Tip="{Lan:Localize mvTipStart}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Command="{Binding OnStartCommand}" IsEnabled="{Binding IsStartCan}"				    
 					>
@@ -89,6 +90,10 @@
 					HorizontalContentAlignment="Stretch" >
 				<Image Source="/Assets/options.png"/>
 			</Button>
+			<ComboBox  Grid.Column="7" SelectionChanged="OnLanguageChanged" IsVisible="False">
+				<ComboBoxItem>English</ComboBoxItem>
+				<ComboBoxItem>Chinese</ComboBoxItem>
+			</ComboBox>
 		</Grid>
 		<SplitView Grid.Row="2" IsPaneOpen="True"
            DisplayMode="Inline" Name="viewSplit"
@@ -97,7 +102,7 @@
 				<Grid RowDefinitions="9*,9*,6*">
 					<Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,3*">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center"
-							   Text="Serial Port Settings" Margin="5,0"/>
+							   Text="{Lan:Localize mwSPS}" Margin="5,0"/>
 						<Border Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="2"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,-5"
 								CornerRadius="2"/>
@@ -113,7 +118,7 @@
 						<ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
 								  Items="{Binding BaudRateList}" SelectedIndex="{Binding BaudRateIndex}"/>
-						<TextBlock Grid.Row="3" Text="Date Bits" TextAlignment="Right"
+						<TextBlock Grid.Row="3" Text="Data Bits" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"

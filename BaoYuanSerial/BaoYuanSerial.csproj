@@ -15,14 +15,6 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Remove="Assets\ascii.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\ascii.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.6" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.6" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.6" />
@@ -53,6 +45,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Language\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Update="Assets\ascii.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
   </ItemGroup>
 </Project>

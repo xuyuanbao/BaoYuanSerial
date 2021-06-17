@@ -15,13 +15,16 @@ using Avalonia.Styling;
 using MessageBox.Avalonia.DTO;
 using MessageBox.Avalonia.Enums;
 using BaoYuanSerial.Models;
+using System;
+using Avalonia.Markup.Xaml.MarkupExtensions;
+using BaoYuanSerial.Util;
 
 namespace BaoYuanSerial.Views
 {
     public partial class MainWindow :Window
     {
         private readonly List<Window> _windows = new List<Window>();
-
+        
         MainWindowViewModel _thisViewModel;
         CheckBox _chbLoop;
 
@@ -44,13 +47,17 @@ namespace BaoYuanSerial.Views
             ToolBoxMenu.Command = ReactiveCommand.Create(ToolBoxMenuClicked);
             var AsciiCodeMenu = this.FindControl<MenuItem>("AsciiCodeMenu");
             AsciiCodeMenu.Command = ReactiveCommand.Create(AsciiCodeMenuClicked);
+            var ChineseMenu = this.FindControl<MenuItem>("ChineseMenu");
+            ChineseMenu.Command = ReactiveCommand.Create(ChineseMenuClicked);
+            var EnglishMenu = this.FindControl<MenuItem>("EnglishMenu");
+            EnglishMenu.Command = ReactiveCommand.Create(EnglishMenuClicked);
             Button btnHideLeft = this.FindControl<Button>("btnHideLeft");
             btnHideLeft.Click += btnHideLeft_Click;
             ComboBox CbbHistory = this.FindControl<ComboBox>("CbbHistory");
             CbbHistory.SelectionChanged += SendHistoryComb_Changed;
             _chbLoop = this.FindControl<CheckBox>("chbLoop");            
             _chbLoop.Checked += LoopChbox_Checked;  //当checkbox未选中转为选中时触发。
-            _chbLoop.Unchecked += LoopChbox_UnChecked;  //当checkbox选中转为未选中时触发           
+            _chbLoop.Unchecked += LoopChbox_UnChecked;  //当checkbox选中转为未选中时触发
 
         }
                
@@ -193,6 +200,21 @@ namespace BaoYuanSerial.Views
             window.Activate();
 
             _windows.Add(window);
+        }
+
+        private void ChineseMenuClicked()
+        {
+            Localizer.Instance.LoadLanguage("zh-CN");
+        }
+        private void EnglishMenuClicked()
+        {
+            Localizer.Instance.LoadLanguage("en-US");
+        }
+        private void OnLanguageChanged(object sender, SelectionChangedEventArgs args)
+        {
+            var cb = sender as ComboBox;
+            var language = cb.SelectedIndex == 0 ? "en-US" : "zh-CN";
+            Localizer.Instance.LoadLanguage(language);
         }
     }
 }

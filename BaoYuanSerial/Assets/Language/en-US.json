@@ -1,0 +1,29 @@
+{
+  "menuTool": "_Tool",
+  "menuToolBox": "Tool_Box",
+  "menuAscii": "Ascii_Code",
+  "menuOptions": "_Options",
+  "menuHelp": "_Help",
+  "menuDoc": "_Document",
+  "menuAbout": "_About",
+  "menuLanguage": "_Language",
+  "menuDonate": "Do_nate",
+  "mwSPS": "Serial Port Settings",
+  "mwPort": "Port",
+  "mwBaudRate": "BaudRate",
+  "mwDataBits": "Data Bits",
+  "mwParity": "Parity",
+  "mwStopBits": "Stop Bits",
+  "mwFlowType": "Flow Type",
+  "mwReceiveSet": "Receive Settings",
+  "mwAutoFL": "Auto Feed Line",
+  "mwDisSend": "Display Send",
+  "mwDisTime": "Display Time",
+  "mwSendSet": "Send Settings",
+  "mwLoop": "Loop Send",
+  "mwSend": "Send",
+  "mvTipSaveLog": "Save Log",
+  "mvTipStart": "Start"
+
+
+}

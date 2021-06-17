@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BaoYuanSerial.ViewModels
 {
     public class AboutViewModel:ViewModelBase
     {
-
+        
         public AboutViewModel()
         {
             

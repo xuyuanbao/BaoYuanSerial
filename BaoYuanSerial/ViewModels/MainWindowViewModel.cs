@@ -727,5 +727,15 @@ namespace BaoYuanSerial.ViewModels
 
         #endregion
 
+        private string _SerialPortSettings = "";
+        public string SerialPortSettings
+        {
+            get => _SerialPortSettings;
+            set
+            {
+                _SerialPortSettings = value;
+                this.RaisePropertyChanged();
+            }
+        }
     }
 }

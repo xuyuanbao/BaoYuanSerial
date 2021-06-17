@@ -9,6 +9,9 @@ using BaoYuanSerial.Models;
 using BaoYuanSerial.Util;
 using ReactiveUI;
 using System.Collections.ObjectModel;
+using Avalonia;
+using Avalonia.Platform;
+using Newtonsoft.Json;
 
 namespace BaoYuanSerial.ViewModels
 {
@@ -17,17 +20,23 @@ namespace BaoYuanSerial.ViewModels
 
         public AsciiCodeViewModel()
         {
-            string txtjson = "";
+            //string txtjson = "";
             try
             {
-                //string name = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".ascii.json";
-                //System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                //System.IO.Stream stream = assembly.GetManifestResourceStream(name);
-                string filename = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Assets/ascii.json";
-                txtjson = File.ReadAllText(filename);
-                AsciiList = JSONHelper.DeserializeJsonToObject<ObservableCollection<AsciiJson>>(txtjson);
+                var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
+                Uri uri = new Uri($"avares://BaoYuanSerial/Assets/ascii.json");
+                if (assets.Exists(uri))
+                {
+                    using (StreamReader sr = new StreamReader(assets.Open(uri), Encoding.UTF8))
+                    {
+                        AsciiList = JsonConvert.DeserializeObject<ObservableCollection<AsciiJson>>(sr.ReadToEnd());
+                    }
+                }
+                //string filename = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Assets/ascii.json";
+                //txtjson = File.ReadAllText(filename);
+                //AsciiList = JSONHelper.DeserializeJsonToObject<ObservableCollection<AsciiJson>>(txtjson);
             }
-            catch
+            catch(Exception ex)
             {
                 
             }

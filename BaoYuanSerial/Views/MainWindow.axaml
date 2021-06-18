@@ -38,9 +38,9 @@
 				<MenuItem Name="AboutMenu" Header="{Lan:Localize menuAbout}" />
 			</MenuItem>
 			<MenuItem Header="{Lan:Localize menuLanguage}" Name="LanguageMenu" Margin="5,5,0,0">
-				<MenuItem Name="ChineseMenu" Header="Ch_inese" />
+				<MenuItem Name="ChineseMenu" Header="{Lan:Localize menuCh}" />
 				<Separator/>
-				<MenuItem Name="EnglishMenu" Header="_English" Margin="5,5,0,0" />
+				<MenuItem Name="EnglishMenu" Header="{Lan:Localize menuEn}" Margin="5,5,0,0" />
 			</MenuItem>
 			<MenuItem Header="{Lan:Localize menuDonate}" Name="DonateMenu" Margin="5,5,0,0">
 			</MenuItem>
@@ -60,32 +60,32 @@
 					>
 				<Image Source="/Assets/start.png"/>
 			</Button>
-			<Button Grid.Column="2" ToolTip.Tip="Pause"
+			<Button Grid.Column="2" ToolTip.Tip="{Lan:Localize mvTipPause}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Command="{Binding OnPauseCommand}" IsEnabled="{Binding IsPauseCan}"					
 					Background="{Binding PauseBtnBackColor}"
 					>
 				<Image Source="/Assets/pause.png"/>
 			</Button>
-			<Button Grid.Column="3" ToolTip.Tip="Stop"
+			<Button Grid.Column="3" ToolTip.Tip="{Lan:Localize mvTipStop}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Command="{Binding OnStopCommand}" IsEnabled="{Binding IsStopCan}"					
 					>
 				<Image Source="/Assets/stop.png"/>
 			</Button>
-			<Button Grid.Column="4" ToolTip.Tip="Clear"
+			<Button Grid.Column="4" ToolTip.Tip="{Lan:Localize mvTipClear}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Command="{Binding OnClearCommand}"
 					>
 				<Image Source="/Assets/clear.png"/>
 			</Button>
-			<Button Grid.Column="5" ToolTip.Tip="Hide Left"
+			<Button Grid.Column="5" ToolTip.Tip="{Lan:Localize mvTipHideLeft}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					Name="btnHideLeft"					
 					>
 				<Image Source="/Assets/hide-left.png"/>
 			</Button>
-			<Button Name="tlbtnOptions" Grid.Column="6" ToolTip.Tip="Options"
+			<Button Name="tlbtnOptions" Grid.Column="6" ToolTip.Tip="{Lan:Localize mvTipOption}"
 					HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
 					HorizontalContentAlignment="Stretch" >
 				<Image Source="/Assets/options.png"/>
@@ -106,26 +106,26 @@
 						<Border Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="2"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,-5"
 								CornerRadius="2"/>
-						<TextBlock Grid.Row="1" Text="Port" TextAlignment="Right"
+						<TextBlock Grid.Row="1" Text="{Lan:Localize mwPort}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,2,0,0"/>
 						<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" 
 								  VerticalAlignment="Center" Margin="5,2,10,0" 
 								  Items="{Binding SerialPortList}" SelectedIndex="{Binding PortNameIndex}"
 								  
 								  />
-						<TextBlock Grid.Row="2" Text="BaudRate" TextAlignment="Right"
+						<TextBlock Grid.Row="2" Text="{Lan:Localize mwBaudRate}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
 								  Items="{Binding BaudRateList}" SelectedIndex="{Binding BaudRateIndex}"/>
-						<TextBlock Grid.Row="3" Text="Data Bits" TextAlignment="Right"
+						<TextBlock Grid.Row="3" Text="{Lan:Localize mwDataBits}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
 							      Items="{Binding DataBitsList}"
 								  SelectedIndex="{Binding DataBitsIndex}"
 								  />
-						<TextBlock Grid.Row="4" Text="Parity" TextAlignment="Right"
+						<TextBlock Grid.Row="4" Text="{Lan:Localize mwParity}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
@@ -136,7 +136,7 @@
 							<ComboBoxItem Content="Mark"/>
 							<ComboBoxItem Content="Space"/>							
 						</ComboBox>
-						<TextBlock Grid.Row="5" Text="Stop Bits" TextAlignment="Right"
+						<TextBlock Grid.Row="5" Text="{Lan:Localize mwStopBits}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
@@ -146,7 +146,7 @@
 							<ComboBoxItem Content="1.5"/>
 							<ComboBoxItem Content="2"/>
 						</ComboBox>
-						<TextBlock Grid.Row="6" Text="Flow Type" TextAlignment="Right"
+						<TextBlock Grid.Row="6" Text="{Lan:Localize mwFlowType}" TextAlignment="Right"
 								   VerticalAlignment="Center" Margin="5,0,0,0"/>
 						<ComboBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"
 								  VerticalAlignment="Center" Margin="5,2,10,0"
@@ -159,7 +159,7 @@
 					</Grid>
 					<Grid Grid.Row="1" RowDefinitions="3*,0.2*,2*,*,*,*" ColumnDefinitions="*,*">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
-							   Text="Receive Settings" Margin="5,0"/>
+							   Text="{Lan:Localize mwReceiveSet}" Margin="5,0"/>
 						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0"
 								CornerRadius="2"/>
@@ -170,19 +170,19 @@
 									 Content="Hex" Margin="10,5" 
 									 IsChecked="{Binding ReceivePara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Auto Feed Line" Margin="10,5" 
+									 Content="{Lan:Localize mwAutoFL}" Margin="10,5" 
 								  IsChecked="{Binding ReceivePara.AutoFeed}"/>
 						<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Display Send" Margin="10,5" 
+									 Content="{Lan:Localize mwDisSend}" Margin="10,5" 
 								  IsChecked="{Binding ReceivePara.DisplaySend}"/>
 						<CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Display Time" Margin="10,5" 
+									 Content="{Lan:Localize mwDisTime}" Margin="10,5" 
 								  IsChecked="{Binding ReceivePara.DisplayTime}"/>
 						
 					</Grid>
 					<Grid Grid.Row="2" RowDefinitions="*,0.2*,2*,1.5*" ColumnDefinitions="*,1.5*,40">
 						<TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
-							   Text="Send Settings" Margin="5,0"/>						
+							   Text="{Lan:Localize mwSendSet}" Margin="5,0"/>						
 						<Border Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
 								BorderThickness="1" BorderBrush="Black" Margin="5,0,5,5"
 								CornerRadius="2"/>
@@ -194,7 +194,7 @@
 									 Content="Hex" Margin="10,5" 
 									 IsChecked="{Binding SendPara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="Loop" Margin="10,0,0,10"
+									 Content="{Lan:Localize mvLoop}" Margin="10,0,0,10"
 									 VerticalAlignment="Stretch" 
 								    Name="chbLoop"  >
 							
@@ -228,7 +228,7 @@
 						  />
 				<Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
 						HorizontalAlignment="Stretch" Margin="0,0,5,5"
-						Content="Send" FontSize="15" Padding="0" 
+						Content="{Lan:Localize mwSend}" FontSize="15" Padding="0" 
 						VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
 						Command="{Binding OnSendCommand}" 
 						IsEnabled="{Binding SendCmdIsEnable}"

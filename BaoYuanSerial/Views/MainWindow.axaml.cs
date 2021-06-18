@@ -58,6 +58,8 @@ namespace BaoYuanSerial.Views
             _chbLoop = this.FindControl<CheckBox>("chbLoop");            
             _chbLoop.Checked += LoopChbox_Checked;  //当checkbox未选中转为选中时触发。
             _chbLoop.Unchecked += LoopChbox_UnChecked;  //当checkbox选中转为未选中时触发
+            GloabalPara.GetLocSet();
+            Localizer.Instance.LoadLanguage(GloabalPara.LocSet.Language);
 
         }
                
@@ -212,9 +214,9 @@ namespace BaoYuanSerial.Views
         }
         private void OnLanguageChanged(object sender, SelectionChangedEventArgs args)
         {
-            var cb = sender as ComboBox;
-            var language = cb.SelectedIndex == 0 ? "en-US" : "zh-CN";
-            Localizer.Instance.LoadLanguage(language);
+            //var cb = sender as ComboBox;
+            //var language = cb.SelectedIndex == 0 ? "en-US" : "zh-CN";
+            //Localizer.Instance.LoadLanguage(language);
         }
     }
 }

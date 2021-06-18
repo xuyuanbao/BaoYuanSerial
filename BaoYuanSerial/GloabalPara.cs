@@ -29,8 +29,7 @@ namespace BaoYuanSerial
         
 
         public static void GetLocSet()
-        {
-            
+        {            
             try
             {
                 var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();

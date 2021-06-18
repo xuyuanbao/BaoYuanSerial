@@ -9,7 +9,7 @@
     <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>Ubuntu</DefineConstants>
+    <DefineConstants>MSWindow</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />

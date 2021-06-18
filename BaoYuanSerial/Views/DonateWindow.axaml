@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:Lan="clr-namespace:BaoYuanSerial.Util"
         mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="500"
         x:Class="BaoYuanSerial.Views.DonateWindow"
 		Width="450" Height="500"
@@ -12,18 +13,18 @@
 		<TextBlock Text="Support BaoYuanSerial" FontWeight="Bold" Margin="10"/>
 		
 		<TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="10" TextWrapping="Wrap" Foreground="Chocolate"
-				   Text="Baoyuanserial is free and free software, which can be downloaded for free. The contribution is entirely voluntary. If you like this software, please consider donating." />
-	    <TextBlock Grid.Row="2" FontWeight="Bold"  Text="Donate channels" VerticalAlignment="Center" Margin="10"/>
-		<TextBlock Grid.Row="3" Text="Alipay" Margin="10" />
-		<TextBlock Grid.Row="3" Grid.Column="1" Text="WeChat" Margin="10" />
+				   Text="{Lan:Localize donTip1}" />
+	    <TextBlock Grid.Row="2" FontWeight="Bold"  Text="{Lan:Localize donChan}" VerticalAlignment="Center" Margin="10"/>
+		<TextBlock Grid.Row="3" Text="{Lan:Localize donAlipay}" Margin="10" />
+		<TextBlock Grid.Row="3" Grid.Column="1" Text="{Lan:Localize donWeChat}" Margin="10" />
 		<Image Grid.Row="4" Grid.Column="0" Source="/Assets/zhifubao.png" 
 			   Stretch="Uniform"/>
 		<Image Grid.Row="4" Grid.Column="1" Source="/Assets/weixin.png"
 			   Stretch="Uniform"/>
 		<TextBlock Grid.Row="5" Grid.ColumnSpan="2"  Margin="10" TextWrapping="Wrap" Foreground="Chocolate"
-				   Text="Note: when donating, please write down your nickname in the remarks.The nickname will be published in GitHub warehouse of this project"/>
+				   Text="{Lan:Localize donTip2}"/>
 		<Button Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" 
 				Margin="5" HorizontalContentAlignment="Center"
-				Name="btnOK" Content="OK" Width="100"/>
+				Name="btnOK" Content="{Lan:Localize btnOK}" Width="100"/>
 	</Grid>
 </Window>

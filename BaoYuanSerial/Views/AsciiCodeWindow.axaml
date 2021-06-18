@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:Lan="clr-namespace:BaoYuanSerial.Util"
 		xmlns:vm="using:BaoYuanSerial.ViewModels"
          mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"		
 		Width="500" Height="350"
@@ -24,7 +25,7 @@
 				  >
 			
 		</DataGrid>
-		<Button Grid.Row="1" Grid.Column="1" Content="OK" VerticalAlignment="Stretch"
+		<Button Grid.Row="1" Grid.Column="1" Content="{Lan:Localize btnOK}" VerticalAlignment="Stretch"
 				HorizontalContentAlignment="Center"
 				HorizontalAlignment="Stretch" Margin="5" Name="btnOK"/>
 	</Grid>

@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:colorpicker="clr-namespace:AvaloniaColorPicker;assembly=AvaloniaColorPicker"
         xmlns:vm="using:BaoYuanSerial.ViewModels"
+		xmlns:Lan="clr-namespace:BaoYuanSerial.Util"
 		mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Assets/yinyang_64.png"
@@ -17,10 +18,10 @@
 	<Grid Margin="5" RowDefinitions="*,40">
 		<TabControl Background="White" SelectedIndex="{Binding OptionsTabSelectedIndex}"
 					>
-			<TabItem Header="Receive" >
+			<TabItem Header="{Lan:Localize optReceive}" >
 				<Grid Margin="0,5,0,5" ColumnDefinitions="110,150,150,*" RowDefinitions="40,40,*"
 					  >
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Minimal Interval:" VerticalAlignment="Center"
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="{Lan:Localize optMiniInt}" VerticalAlignment="Center"
 							   Margin="0,0,5,5"/>
 					<NumericUpDown Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center"
 								Margin="0,0,5,2"
@@ -28,7 +29,7 @@
 								   />
 					<TextBlock Grid.Row="0" Grid.Column="2" Text="ms" VerticalAlignment="Center"
 							   Margin="0,0,5,5"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="Time Format:" VerticalAlignment="Center"
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="{Lan:Localize optTimeFormat}" VerticalAlignment="Center"
 							   Margin="0,0,5,0"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
 								Margin="0,0,5,2" Padding="0"
@@ -42,14 +43,14 @@
 					
 				</Grid>
 			</TabItem>
-			<TabItem Header="Send" >
+			<TabItem Header="{Lan:Localize optSend}" >
 				<Grid RowDefinitions="120,*">
 					<Grid RowDefinitions="40,40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
-						<CheckBox Content="Format Send" Grid.ColumnSpan="2"
+						<CheckBox Content="{Lan:Localize optFormatSend}" Grid.ColumnSpan="2"
 								  IsChecked="{Binding SendPara.FormatSend}"
 								  />
 						<TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-								   Text="Line Ending Mode" VerticalAlignment="Bottom"
+								   Text="{Lan:Localize optLineEnd}" VerticalAlignment="Bottom"
 							   Margin="0,0,5,5"/>
 						<Border Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
 								BorderBrush="Black">																	
@@ -69,12 +70,12 @@
 					
 				</Grid>
 			</TabItem>
-			<TabItem Header="Log" >
+			<TabItem Header="{Lan:Localize optLog}" >
 				<Grid RowDefinitions="40,40,40,40,40,*" ColumnDefinitions="100,200,100,*">
-					<CheckBox Content="Save Log Message" Grid.ColumnSpan="2"
+					<CheckBox Content="{Lan:Localize optSaveLog}" Grid.ColumnSpan="2"
 							  IsChecked="{Binding LogPara.SaveLogMsg}"
 							  />
-					<TextBlock Grid.Row="1" Text="File Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+					<TextBlock Grid.Row="1" Text="{Lan:Localize optFileName}" VerticalAlignment="Center" HorizontalAlignment="Right"
 							   Margin="0,5,5,5"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
 							 VerticalAlignment="Stretch" Margin="0,0,5,5"
@@ -83,20 +84,20 @@
 					<Button Name="btnOpenFile" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
 							VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
 							HorizontalContentAlignment="Center"  Margin="0,0,5,5"
-							Content="Open..."
+							Content="{Lan:Localize btnOpen}"
 							Command="{Binding OpenFileCommand}"
 							CommandParameter="{Binding ElementName=OptWindow}"
 							/>
-					<TextBlock Grid.Row="2" Text="Max File Size" VerticalAlignment="Center" HorizontalAlignment="Right"
+					<TextBlock Grid.Row="2" Text="{Lan:Localize optMaxFileSize}" VerticalAlignment="Center" HorizontalAlignment="Right"
 							   Margin="0,5,5,5"/>
 					<NumericUpDown Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"
 							 VerticalAlignment="Stretch" Margin="0,0,5,5"
 								   Value="{Binding LogPara.MaxFileSize}"/>
 					<TextBlock Grid.Row="2" Grid.Column="2" Text="MB" VerticalAlignment="Center" HorizontalAlignment="Left"
 							   Margin="0,5,5,5"/>
-					<CheckBox Grid.Row="3" Content="Enable Write Buffer" Grid.ColumnSpan="2"
+					<CheckBox Grid.Row="3" Content="{Lan:Localize optEnableWriteBuf}" Grid.ColumnSpan="2"
 							  IsChecked="{Binding LogPara.EnableWriteBuf}"/>
-					<TextBlock Grid.Row="4" Text="Buffer Size" VerticalAlignment="Center" HorizontalAlignment="Right"
+					<TextBlock Grid.Row="4" Text="{Lan:Localize optBufSize}" VerticalAlignment="Center" HorizontalAlignment="Right"
 								   Margin="0,5,5,5"/>
 					<NumericUpDown Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"
 							 VerticalAlignment="Stretch" Margin="0,0,5,5"
@@ -105,24 +106,24 @@
 								   Margin="0,5,5,5" />
 				</Grid>
 			</TabItem>
-			<TabItem Header="Display" >
+			<TabItem Header="{Lan:Localize optDisplay}" >
 				<Grid RowDefinitions="40,40,40,40,*" ColumnDefinitions="150,150,100">
-					<CheckBox Content="Format Display Color" Grid.ColumnSpan="2"/>
-					<TextBlock Grid.Row="1" Text="Receive Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
+					<CheckBox Content="{Lan:Localize optFormatDisColor}" Grid.ColumnSpan="2"/>
+					<TextBlock Grid.Row="1" Text="{Lan:Localize optRecTextColor}" VerticalAlignment="Center" HorizontalAlignment="Right"
 							   Margin="0,5,5,5"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"
 							 VerticalAlignment="Stretch" Margin="0,0,5,5"
 							 Name="txtColorReceive" Text="{Binding Path=DisplayPara.ReceiveTxtColor,Mode=TwoWay}"  />
 					<colorpicker:ColorButton Color="#000000" Name="btnColorReceive" Grid.Row="1" Grid.Column="2" 
 							VerticalAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="True"/>
-					<TextBlock Grid.Row="2" Text="Send Text Color" VerticalAlignment="Center" HorizontalAlignment="Right"
+					<TextBlock Grid.Row="2" Text="{Lan:Localize optSendTextColor}" VerticalAlignment="Center" HorizontalAlignment="Right"
 							   Margin="0,5,5,0"/>
 					<TextBox Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"
 							 VerticalAlignment="Stretch" Margin="0,0,5,5"
 						 Name="txtColorSend" Text="{Binding DisplayPara.SendTxtColor}"/>
 					<colorpicker:ColorButton Color="#000000" Name="btnColorSend" Grid.Row="2" Grid.Column="2"
 							VerticalAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="True"/>
-					<TextBlock Grid.Row="4" Grid.Column="0" Text="To be realized"
+					<TextBlock Grid.Row="4" Grid.Column="0" Text="{Lan:Localize optTip1}"
 							   VerticalAlignment="Center" HorizontalAlignment="Left"
 							   Foreground="Red"
 							   />
@@ -131,19 +132,19 @@
 		</TabControl>
 		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" 
 					Margin="0,5,5,0">
-			<Button Name="btnOK" Content="OK" Width="100" VerticalAlignment="Stretch"
+			<Button Name="btnOK" Content="{Lan:Localize btnOK}" Width="100" VerticalAlignment="Stretch"
 						HorizontalAlignment="Right" HorizontalContentAlignment="Center"
 					Margin="0,0,5,0" IsDefault="True" IsEnabled="True"
 					Command="{Binding Path=OnOKCommand}"
 					CommandParameter="{Binding ElementName=OptWindow}"
 					/>
-			<Button Name="btnCancel" Content="Cancel" Width="100" VerticalAlignment="Stretch"
+			<Button Name="btnCancel" Content="{Lan:Localize btnCancel}" Width="100" VerticalAlignment="Stretch"
 					HorizontalAlignment="Right" HorizontalContentAlignment="Center"
 					Margin="0,0,5,0" IsCancel="True" IsEnabled="True"
 				Command="{Binding Path=OnCancelCommand}"
 				CommandParameter="{Binding ElementName=OptWindow}"
 					/>
-			<Button Name="btnApply" Content="Apply" Width="100" VerticalAlignment="Stretch" 
+			<Button Name="btnApply" Content="{Lan:Localize btnApply}" Width="100" VerticalAlignment="Stretch" 
 					HorizontalAlignment="Right" HorizontalContentAlignment="Center"
 				    Command="{Binding Path=OnApplyCommand}"
 				    IsEnabled="True"

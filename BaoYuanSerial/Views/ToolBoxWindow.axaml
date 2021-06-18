@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:Lan="clr-namespace:BaoYuanSerial.Util"
 		xmlns:vm="using:BaoYuanSerial.ViewModels"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
 		Width="500" Height="400"
@@ -38,12 +39,12 @@
 	</Window.Styles>
 	<Grid Margin="5" >
 		<TabControl Background="White">
-			<TabItem Header="Common Check Method" >
+			<TabItem Header="{Lan:Localize tbwCCMethod}" >
 				<Grid RowDefinitions="*,40,40,40,40,40,*" ColumnDefinitions="100,*,120">
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Strings"/>
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="{Lan:Localize tbwString}"/>
 					<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
 							 VerticalAlignment="Stretch" Text="{Binding SrcStrings}"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="Check Value"/>
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="{Lan:Localize tbwCheckVal}"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" 
 							 ScrollViewer.VerticalScrollBarVisibility="Auto"
 						     Text="{Binding StrLRC}"
@@ -73,50 +74,50 @@
 							Content="CRC16-LoHi" ToolTip.Tip="Standard Modbus CRC16 format" 
 							Command="{Binding OnCRC16LoHiCommand}"
 							/>
-					<TextBlock Grid.Row="6" Grid.Column="0" Text="Full Strings"/>
+					<TextBlock Grid.Row="6" Grid.Column="0" Text="{Lan:Localize tbwFullStr}"/>
 					<TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch"
 							 Text="{Binding StrFullStr}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 				</Grid>			
 			</TabItem>
-			<TabItem Header="Data Conversion" >
+			<TabItem Header="{Lan:Localize tbwDataConvert}" >
 				<Grid RowDefinitions="40,40,40,40,40,40,40,*" ColumnDefinitions="100,*,120">
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Decimal"/>
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="{Lan:Localize tbwDecimal}"/>
 					<TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding StrDecimal}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To 16 Hex" 
+							Content="{Lan:Localize tbwToHex}" 
 							Command="{Binding OnDecimalTo16HexCommand}"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="Single Hex"/>
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="{Lan:Localize tbwSingleHex}"/>
 					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding StrSingleHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Decimal"
+							Content="{Lan:Localize tbwToDecimal}"
 							Command="{Binding OnSingleHexToDecimalCommand}"/>
-					<TextBlock Grid.Row="2" Grid.Column="0" Text="Double Hex"/>
+					<TextBlock Grid.Row="2" Grid.Column="0" Text="{Lan:Localize tbwDoubleHex}"/>
 					<TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding StrDoubleHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Decimal"
+							Content="{Lan:Localize tbwToDecimal}"
 							Command="{Binding OnDoubleHexToDecimalCommand}"
 							/>
 					
-					<TextBlock Grid.Row="4" Grid.Column="0" Text="Integer"/>
+					<TextBlock Grid.Row="4" Grid.Column="0" Text="{Lan:Localize tbwInteger}"/>
 					<TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding StrInteger}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To 16 Hex" 
+							Content="{Lan:Localize tbwToHex}" 
 							Command="{Binding OnIntegerTo16HexCommand}"/>
-					<TextBlock Grid.Row="5" Grid.Column="0" Text="16 Bit Hex"/>
+					<TextBlock Grid.Row="5" Grid.Column="0" Text="{Lan:Localize tbw16Hex}"/>
 					<TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding Str16BitHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Integer" 
+							Content="{Lan:Localize tbwToInteger}" 
 							Command="{Binding On16BitHexToIntegerCommand}"/>
-					<TextBlock Grid.Row="6" Grid.Column="0" Text="32 Bit Hex"/>
+					<TextBlock Grid.Row="6" Grid.Column="0" Text="{Lan:Localize tbw32Hex}"/>
 					<TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Stretch"
 							 Text="{Binding Str32BitHex}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 					<Button Grid.Row="6" Grid.Column="2" VerticalAlignment="Stretch"
-							Content="To Integer"
+							Content="{Lan:Localize tbwToInteger}"
 							Command="{Binding On32BitHexToIntegerCommand}"
 							/>
 					

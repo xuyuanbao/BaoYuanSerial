@@ -28,5 +28,13 @@ Interface
 ----
 Microsoft Windows  
 ![](Img/MainUI_WIN10.png)    
+![](Img/main_ch.png)    
+![](Img/toolbox.png)    
+![](Img/toolbox2.png)    
+![](Img/ascii.png)    
+![](Img/opt1.png)    
+![](Img/opt2.png)    
+![](Img/opt3.png)    
+![](Img/opt4.png)    
 Ubuntu  
 ![](Img/MainUI_Ubuntu.png)  

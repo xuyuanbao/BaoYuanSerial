@@ -48,6 +48,7 @@ namespace BaoYuanSerial
                 throw ex;
             }            
         }
+       
 
     }
 }

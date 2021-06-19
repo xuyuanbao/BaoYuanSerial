@@ -207,6 +207,7 @@ namespace BaoYuanSerial.Views
         private void ChineseMenuClicked()
         {
             Localizer.Instance.LoadLanguage("zh-CN");
+
         }
         private void EnglishMenuClicked()
         {

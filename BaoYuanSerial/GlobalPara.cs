@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace BaoYuanSerial
 {
-    public class GloabalPara
+    public class GlobalPara
     {
         public static string SysPlattform = "";
 
@@ -26,22 +26,31 @@ namespace BaoYuanSerial
         public static readonly SolidColorBrush GreenBrush = new SolidColorBrush(Colors.Green);
         public static readonly SolidColorBrush TransparentBrush = new SolidColorBrush(Colors.Transparent);
         public static LocSet LocSet=new LocSet();
-        
+
+        private static string _LangFileName = "Language.cfg"; 
 
         public static void GetLocSet()
         {            
             try
             {
-                var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
-
-                Uri uri = new Uri($"avares://BaoYuanSerial/Assets/locSet.json");
-                if (assets.Exists(uri))
+                if(File.Exists(_LangFileName))
                 {
-                    using (StreamReader sr = new StreamReader(assets.Open(uri), Encoding.UTF8))
-                    {
-                        LocSet = Util.JSONHelper.DeserializeJsonToObject<LocSet>(sr.ReadToEnd());
-                    }
+                    string lang = File.ReadAllText(_LangFileName).Trim().Substring(0,5);
+                    LocSet.Language = lang;
                 }
+                else
+                {
+                    File.WriteAllText(_LangFileName, "en-US");
+                }
+                //var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
+                //Uri uri = new Uri($"avares://BaoYuanSerial/Assets/locSet.json");
+                //if (assets.Exists(uri))
+                //{
+                //    using (StreamReader sr = new StreamReader(assets.Open(uri), Encoding.UTF8))
+                //    {
+                //        LocSet = Util.JSONHelper.DeserializeJsonToObject<LocSet>(sr.ReadToEnd());
+                //    }
+                //}
             }
             catch(Exception ex)
             {
@@ -49,6 +58,16 @@ namespace BaoYuanSerial
             }            
         }
        
-
+        public static void SaveCurLanguage(string lang)
+        {
+             try
+            {
+                File.WriteAllText(_LangFileName, lang);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

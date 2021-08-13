@@ -21,17 +21,24 @@ namespace BaoYuanSerial.ViewModels
     {
 
         public SerialPort _serialPort;
+
         
-
         public MainWindowViewModel()
-        {
+        {            
             SerialPortList = SerialPort.GetSerials();
+            if(SerialPortList.Count>0)
+            {
+                _ComPortState = SerialPortList[PortNameIndex] + " ClOSED";
+            }
+            else
+            {
+                ComPortState = "Not Detected SerialPort";
+                ComPortStateColor = GlobalPara.RedBrush;
+            }                   
             DataBitsIndex = 3;
-            _ComPortState = SerialPortList[PortNameIndex] + " ClOSED";
-
-            ReceivePara = GloabalPara.ReceivePara;
-            SendPara = GloabalPara.SendPara;
-            LogPara = GloabalPara.LogPara;
+            ReceivePara = GlobalPara.ReceivePara;
+            SendPara = GlobalPara.SendPara;
+            LogPara = GlobalPara.LogPara;
 
 
             OnSendCommand = ReactiveCommand.CreateFromTask(SendCommand);
@@ -40,9 +47,25 @@ namespace BaoYuanSerial.ViewModels
             OnPauseCommand = ReactiveCommand.Create(OnPauseClick);
             OnStopCommand = ReactiveCommand.Create(OnStopClick);
             OnClearCommand = ReactiveCommand.Create(OnClearClick);
+            try
+            {
+                BackDetectSerialPortChange();
+            }
+            catch { }
             
         }
 
+        private void BackDetectSerialPortChange()
+        {
+            Task task = Task.Factory.StartNew(new Action(() => {             
+                while(true)
+                {
+                    if (!IsStartCan) continue;
+                    Thread.Sleep(500);
+                    SerialPortList = SerialPort.GetSerials();
+                }            
+            }));
+        }
 
         public async Task SendCmdLoop()
         {
@@ -155,11 +178,11 @@ namespace BaoYuanSerial.ViewModels
             LogPara.SaveLogMsg = !LogPara.SaveLogMsg;
             if(LogPara.SaveLogMsg)
             {
-                LogBtnBackColor= GloabalPara.RedBrush;
+                LogBtnBackColor= GlobalPara.RedBrush;
             }
             else
             {
-                LogBtnBackColor = GloabalPara.TransparentBrush;
+                LogBtnBackColor = GlobalPara.TransparentBrush;
             }
         }
 
@@ -213,7 +236,7 @@ namespace BaoYuanSerial.ViewModels
                 IsStartCan = false;
                 IsStopCan = true;
                 IsPauseCan = true;               
-                PauseBtnBackColor = GloabalPara.TransparentBrush;
+                PauseBtnBackColor = GlobalPara.TransparentBrush;
 
                 bool bdtr = false;bool brts = false;
 
@@ -230,12 +253,12 @@ namespace BaoYuanSerial.ViewModels
                 _serialPort.Open();
 
                 ComPortState = SerialPortList[PortNameIndex] + " Opend";
-                ComPortStateColor = GloabalPara.GreenBrush;
+                ComPortStateColor = GlobalPara.GreenBrush;
             }
             catch
             {
                 ComPortState = SerialPortList[PortNameIndex]+ " Can't open!";
-                ComPortStateColor = GloabalPara.RedBrush;
+                ComPortStateColor = GlobalPara.RedBrush;
             }
         }
 
@@ -268,13 +291,13 @@ namespace BaoYuanSerial.ViewModels
         private void OnPauseClick()
         {
             
-            if(PauseBtnBackColor==GloabalPara.GreenBrush)
+            if(PauseBtnBackColor==GlobalPara.GreenBrush)
             {
-                PauseBtnBackColor = GloabalPara.RedBrush;
+                PauseBtnBackColor = GlobalPara.RedBrush;
             }
             else
             {
-                PauseBtnBackColor = GloabalPara.GreenBrush;
+                PauseBtnBackColor = GlobalPara.GreenBrush;
             }
         }
 
@@ -286,7 +309,7 @@ namespace BaoYuanSerial.ViewModels
             IsStopCan = false;
             IsStartCan = true;
             IsPauseCan = false;            
-            PauseBtnBackColor = GloabalPara.RedBrush;
+            PauseBtnBackColor = GlobalPara.RedBrush;
             if (_serialPort!=null)
             {
                 if (_serialPort.IsOpen) _serialPort.Close();
@@ -344,7 +367,7 @@ namespace BaoYuanSerial.ViewModels
             catch
             {
                 ComPortState = SerialPortList[PortNameIndex] + " Recive Process Error!";
-                ComPortStateColor = GloabalPara.RedBrush;
+                ComPortStateColor = GlobalPara.RedBrush;
             }
         }
 
@@ -720,7 +743,7 @@ namespace BaoYuanSerial.ViewModels
             {
                 Util.FileTool.SaveFailLog(ex.Message);
                 ComPortState = "Save Log Err";
-                ComPortStateColor = GloabalPara.RedBrush;
+                ComPortStateColor = GlobalPara.RedBrush;
             }
             return bret;
         }

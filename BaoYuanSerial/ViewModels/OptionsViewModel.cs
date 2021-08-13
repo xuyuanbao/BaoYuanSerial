@@ -112,24 +112,24 @@ namespace BaoYuanSerial.ViewModels
         }
         private void OnOK(Window window)
         {
-            GloabalPara.ReceivePara.MinimalInterval = ReceivePara.MinimalInterval;
-            GloabalPara.ReceivePara.TimeFormat = ReceivePara.TimeFormat;
+            GlobalPara.ReceivePara.MinimalInterval = ReceivePara.MinimalInterval;
+            GlobalPara.ReceivePara.TimeFormat = ReceivePara.TimeFormat;
 
-            GloabalPara.SendPara.FormatSend = SendPara.FormatSend;
-            GloabalPara.SendPara.FormatNewLine = SendPara.FormatNewLine;
-            GloabalPara.SendPara.FormatCarReturn = SendPara.FormatCarReturn;
-            GloabalPara.SendPara.FormatCRNL = SendPara.FormatCRNL;
-            GloabalPara.SendPara.FormatNLCR = SendPara.FormatNLCR;
+            GlobalPara.SendPara.FormatSend = SendPara.FormatSend;
+            GlobalPara.SendPara.FormatNewLine = SendPara.FormatNewLine;
+            GlobalPara.SendPara.FormatCarReturn = SendPara.FormatCarReturn;
+            GlobalPara.SendPara.FormatCRNL = SendPara.FormatCRNL;
+            GlobalPara.SendPara.FormatNLCR = SendPara.FormatNLCR;
 
-            GloabalPara.LogPara.SaveLogMsg = LogPara.SaveLogMsg;
-            GloabalPara.LogPara.FileName = LogPara.FileName;
-            GloabalPara.LogPara.MaxFileSize = LogPara.MaxFileSize;
-            GloabalPara.LogPara.EnableWriteBuf = LogPara.EnableWriteBuf;
-            GloabalPara.LogPara.BufSize = LogPara.BufSize;
+            GlobalPara.LogPara.SaveLogMsg = LogPara.SaveLogMsg;
+            GlobalPara.LogPara.FileName = LogPara.FileName;
+            GlobalPara.LogPara.MaxFileSize = LogPara.MaxFileSize;
+            GlobalPara.LogPara.EnableWriteBuf = LogPara.EnableWriteBuf;
+            GlobalPara.LogPara.BufSize = LogPara.BufSize;
 
-            GloabalPara.DisplayPara.FormatDisColor = DisplayPara.FormatDisColor;
-            GloabalPara.DisplayPara.ReceiveTxtColor = DisplayPara.ReceiveTxtColor;
-            GloabalPara.DisplayPara.SendTxtColor = DisplayPara.SendTxtColor;
+            GlobalPara.DisplayPara.FormatDisColor = DisplayPara.FormatDisColor;
+            GlobalPara.DisplayPara.ReceiveTxtColor = DisplayPara.ReceiveTxtColor;
+            GlobalPara.DisplayPara.SendTxtColor = DisplayPara.SendTxtColor;
 
             if (window != null)
             {
@@ -156,27 +156,27 @@ namespace BaoYuanSerial.ViewModels
             switch (OptionsTabSelectedIndex)
             {
                 case 0:
-                    GloabalPara.ReceivePara.MinimalInterval = ReceivePara.MinimalInterval;
-                    GloabalPara.ReceivePara.TimeFormat = ReceivePara.TimeFormat;
+                    GlobalPara.ReceivePara.MinimalInterval = ReceivePara.MinimalInterval;
+                    GlobalPara.ReceivePara.TimeFormat = ReceivePara.TimeFormat;
                     break;
                 case 1:
-                    GloabalPara.SendPara.FormatSend = SendPara.FormatSend;
-                    GloabalPara.SendPara.FormatNewLine = SendPara.FormatNewLine;
-                    GloabalPara.SendPara.FormatCarReturn = SendPara.FormatCarReturn;
-                    GloabalPara.SendPara.FormatCRNL = SendPara.FormatCRNL;
-                    GloabalPara.SendPara.FormatNLCR = SendPara.FormatNLCR;              
+                    GlobalPara.SendPara.FormatSend = SendPara.FormatSend;
+                    GlobalPara.SendPara.FormatNewLine = SendPara.FormatNewLine;
+                    GlobalPara.SendPara.FormatCarReturn = SendPara.FormatCarReturn;
+                    GlobalPara.SendPara.FormatCRNL = SendPara.FormatCRNL;
+                    GlobalPara.SendPara.FormatNLCR = SendPara.FormatNLCR;              
                     break;
                 case 2:
-                    GloabalPara.LogPara.SaveLogMsg = LogPara.SaveLogMsg;
-                    GloabalPara.LogPara.FileName = LogPara.FileName;
-                    GloabalPara.LogPara.MaxFileSize = LogPara.MaxFileSize;
-                    GloabalPara.LogPara.EnableWriteBuf = LogPara.EnableWriteBuf;
-                    GloabalPara.LogPara.BufSize = LogPara.BufSize;
+                    GlobalPara.LogPara.SaveLogMsg = LogPara.SaveLogMsg;
+                    GlobalPara.LogPara.FileName = LogPara.FileName;
+                    GlobalPara.LogPara.MaxFileSize = LogPara.MaxFileSize;
+                    GlobalPara.LogPara.EnableWriteBuf = LogPara.EnableWriteBuf;
+                    GlobalPara.LogPara.BufSize = LogPara.BufSize;
                     break;
                 case 3:
-                    GloabalPara.DisplayPara.FormatDisColor = DisplayPara.FormatDisColor;
-                    GloabalPara.DisplayPara.ReceiveTxtColor = DisplayPara.ReceiveTxtColor;
-                    GloabalPara.DisplayPara.SendTxtColor = DisplayPara.SendTxtColor;
+                    GlobalPara.DisplayPara.FormatDisColor = DisplayPara.FormatDisColor;
+                    GlobalPara.DisplayPara.ReceiveTxtColor = DisplayPara.ReceiveTxtColor;
+                    GlobalPara.DisplayPara.SendTxtColor = DisplayPara.SendTxtColor;
                     break;
             }
         }

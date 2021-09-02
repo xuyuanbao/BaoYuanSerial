@@ -59,6 +59,7 @@ namespace BaoYuanSerial.Util
         /// <returns></returns>
         public static ushort GetUshortFromHEXString(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[2];
             btArray[1] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[0] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -68,6 +69,7 @@ namespace BaoYuanSerial.Util
         //把4个HEX字符转换为一个INT16数值。
         public static Int16 GetINT16FromHEXString(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[2];
             btArray[0] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[1] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -77,6 +79,7 @@ namespace BaoYuanSerial.Util
         //把8个HEX字符转成一个int32.
         public static Int32 GetINT32FromHEXString(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[4];
             btArray[0] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[1] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -89,6 +92,7 @@ namespace BaoYuanSerial.Util
         //把8个HEX字符转成一个Uint32.
         public static UInt32 GetUINT32FromHEXString(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[4];
             btArray[0] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[1] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -101,6 +105,7 @@ namespace BaoYuanSerial.Util
         //把8个HEX字符转成一个Single.HEX顺序1234
         public static float GetFloatFromHEXString(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[4];
             btArray[0] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[1] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -113,6 +118,7 @@ namespace BaoYuanSerial.Util
         //把8个HEX字符转成一个Single. HEX顺序4321;
         public static float GetFloatFromHEXString_4321(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[4];
             btArray[3] = Convert.ToByte(strHex.Substring(0, 2), 16);
             btArray[2] = Convert.ToByte(strHex.Substring(2, 2), 16);
@@ -125,6 +131,7 @@ namespace BaoYuanSerial.Util
         //把4个HEX字符转成一个Uint32.
         public static float GetFloatFromHEXString_4(string strHex)
         {
+            strHex = strHex.Replace(" ", "").Replace(Environment.NewLine, "");  //去除多余空格
             byte[] btArray = new byte[4];
             btArray[0] = Convert.ToByte(strHex.Substring(0, 1), 16);
             btArray[1] = Convert.ToByte(strHex.Substring(1, 1), 16);
@@ -140,7 +147,7 @@ namespace BaoYuanSerial.Util
       /// <returns></returns>
       public static byte[] HexStringToByte(string strHex)
         {
-            strHex.Replace(" ", "").Replace(Environment.NewLine,"");  //去除多余空格
+            strHex=strHex.Replace(" ", "").Replace(Environment.NewLine,"");  //去除多余空格
             int nLen = strHex.Length;
             nLen = nLen / 2;
             byte[] btArrayCmd = new byte[nLen];

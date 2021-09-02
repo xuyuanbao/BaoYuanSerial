@@ -9,7 +9,7 @@
         x:Class="BaoYuanSerial.Views.AboutWindow"
 		WindowStartupLocation="CenterScreen"
 		Width="500" Height="300"
-        Title="AboutWindow">
+        Title="{Lan:Localize aboutAbout}">
 	<Design.DataContext>
 		<vm:AboutViewModel/>
 	</Design.DataContext>

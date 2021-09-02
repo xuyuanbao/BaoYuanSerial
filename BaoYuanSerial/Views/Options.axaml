@@ -11,7 +11,7 @@
 		Width="500" Height="350"
         x:Class="BaoYuanSerial.Views.OptionsWindow"
 		Name="OptWindow"
-        Title="Options">
+        Title="{Lan:Localize optOption}">
 	<Design.DataContext>
 		<vm:OptionsViewModel/>
 	</Design.DataContext>
@@ -45,26 +45,32 @@
 			</TabItem>
 			<TabItem Header="{Lan:Localize optSend}" >
 				<Grid RowDefinitions="120,*">
-					<Grid RowDefinitions="40,40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
-						<CheckBox Content="{Lan:Localize optFormatSend}" Grid.ColumnSpan="2"
+					<Grid RowDefinitions="40,60,40,5,60,5,*" ColumnDefinitions="*,1.3*,*,*">
+						<CheckBox Content="{Lan:Localize optFormatSend}" Grid.ColumnSpan="4"
 								  IsChecked="{Binding SendPara.FormatSend}"
 								  />
-						<TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+						<TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"								   
+								Text="{Lan:Localize optFormatTip}" 								 
+								 VerticalAlignment="Stretch"
+								 HorizontalAlignment="Stretch"
+								 
+							   Margin="5"/>
+						<TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
 								   Text="{Lan:Localize optLineEnd}" VerticalAlignment="Bottom"
 							   Margin="0,0,5,5"/>
-						<Border Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
+						<Border Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderThickness="1" CornerRadius="3"
 								BorderBrush="Black">																	
 						</Border>
-						<RadioButton Grid.Row="3" Grid.Column="0" GroupName="raLEM" Content="New Line"
+						<RadioButton Grid.Row="4" Grid.Column="0" GroupName="raLEM" Content="0A"
 								Margin="5,0,0,0"
 								 IsChecked="{Binding SendPara.FormatNewLine}"
 									 />
-						<RadioButton Grid.Row="3" Grid.Column="1" GroupName="raLEM" Content="Carriage Return"
+						<RadioButton Grid.Row="4" Grid.Column="1" GroupName="raLEM" Content="0D"
 									  IsChecked="{Binding SendPara.FormatCarReturn}"
 									 />
-						<RadioButton Grid.Row="3" Grid.Column="2" GroupName="raLEM" Content="NL &amp; CR"
+						<RadioButton Grid.Row="4" Grid.Column="2" GroupName="raLEM" Content="0A &amp; 0D"
 									  IsChecked="{Binding SendPara.FormatNLCR}"/>
-						<RadioButton Grid.Row="3" Grid.Column="3" GroupName="raLEM" Content="CR &amp; NL"
+						<RadioButton Grid.Row="4" Grid.Column="3" GroupName="raLEM" Content="0D &amp; 0A"
 									  IsChecked="{Binding SendPara.FormatCRNL}"/>
 					</Grid>
 					

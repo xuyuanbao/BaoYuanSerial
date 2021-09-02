@@ -32,22 +32,26 @@
   "mvTipHideLeft": "Hide Left",
   "mvTipOption": "Options",
   "aboutProvide": "Provide fully customized software solutions.",
+  "aboutAbout": "About",
   "btnOK": "OK",
   "btnCancel": "Cancel",
   "btnApply": "Apply",
   "donSupport": "Support BaoYuanSerial",
+  "donTitle": "Donate",
   "donTip1": "Baoyuanserial is free and free software, which can be downloaded for free. The contribution is entirely voluntary. If you like this software, please consider donating.",
   "donTip2": "Note: when donating, please write down your nickname in the remarks.The nickname will be published in GitHub warehouse of this project.",
   "donChan": "Donate channels",
   "donAlipay": "Alipay",
   "donWeChat": "WeChat",
+  "optOption": "Options",
   "optReceive": "Receive",
   "optSend": "Send",
   "optLog": "Log",
   "optDisplay": "Display",
   "optMiniInt": "Minimal Interval:",
   "optTimeFormat": "Time Format:",
-  "optFormatSend": "Format Send(010203->01 02 03)",
+  "optFormatSend": "Format Send",
+  "optFormatTip": "If this option is checked, the following settings will not take effect until they are applied",
   "optLineEnd": "Line Ending Mode",
   "optSaveLog": "Save Log Message",
   "optFileName": "File Name",
@@ -72,7 +76,10 @@
   "tbw32Hex": "32 Bit Hex",
   "tbwToHex": "To Hex",
   "tbwToDecimal": "To Decimal",
-  "tbwToInteger": "To Integer"
+  "tbwToInteger": "To Integer",
+  "tbTitle": "ToolBox",
+  "asciiTitle": "ASCII Table"
+
 
 
 }

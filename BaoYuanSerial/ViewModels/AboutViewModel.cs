@@ -29,7 +29,7 @@ namespace BaoYuanSerial.ViewModels
             }
         }
 
-        private string _Version = "Version:1.0.1";
+        private string _Version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();// "Version:1.1.1";
         public string Version
         {
             get => _Version;

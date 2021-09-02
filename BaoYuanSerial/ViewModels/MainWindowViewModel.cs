@@ -89,19 +89,19 @@ namespace BaoYuanSerial.ViewModels
                 {
                     if (SendPara.FormatCRNL)
                     {
-                        txtsend += "0D0A";
+                        txtsend += "\r\n";
                     }
                     else if (SendPara.FormatNLCR)
                     {
-                        txtsend += "0A0D";
+                        txtsend += "\n\r";
                     }
                     else if (SendPara.FormatNewLine)
                     {
-                        txtsend += "0A";
+                        txtsend += "\r";
                     }
                     else if (SendPara.FormatCarReturn)
                     {
-                        txtsend += "0D";
+                        txtsend += "\n";
                     }
                 }
                 int byteNum = 0;   //�˴η��˼����ֽ�
@@ -235,7 +235,8 @@ namespace BaoYuanSerial.ViewModels
                 }
                 IsStartCan = false;
                 IsStopCan = true;
-                IsPauseCan = true;               
+                IsPauseCan = true;
+                SendCmdIsEnable = true;
                 PauseBtnBackColor = GlobalPara.TransparentBrush;
 
                 bool bdtr = false;bool brts = false;
@@ -308,7 +309,8 @@ namespace BaoYuanSerial.ViewModels
         {            
             IsStopCan = false;
             IsStartCan = true;
-            IsPauseCan = false;            
+            IsPauseCan = false;
+            SendCmdIsEnable = false;
             PauseBtnBackColor = GlobalPara.RedBrush;
             if (_serialPort!=null)
             {
@@ -653,7 +655,7 @@ namespace BaoYuanSerial.ViewModels
             }
         }
 
-        private bool _SendCmdIsEnable = true;
+        private bool _SendCmdIsEnable = false;
 
         public bool SendCmdIsEnable
         {

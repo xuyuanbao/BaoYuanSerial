@@ -9,7 +9,7 @@
         x:Class="BaoYuanSerial.Views.ToolBoxWindow"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Assets/yinyang_64.png"
-        Title="ToolBoxViewModel">
+        Title="{Lan:Localize tbTitle}">
 	<Design.DataContext>
 		<vm:ToolBoxViewModel/>
 	</Design.DataContext>

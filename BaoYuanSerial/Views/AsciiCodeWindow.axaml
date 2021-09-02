@@ -9,7 +9,7 @@
         x:Class="BaoYuanSerial.ViewModels.AsciiCodeWindow"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Assets/yinyang_64.png"
-        Title="AsciiCodeWindow">
+        Title="{Lan:Localize asciiTitle}">
 	<Design.DataContext>
 		<vm:AsciiCodeViewModel/>
 	</Design.DataContext>

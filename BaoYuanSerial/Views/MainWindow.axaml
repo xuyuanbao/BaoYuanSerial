@@ -194,7 +194,7 @@
 									 Content="Hex" Margin="10,5" 
 									 IsChecked="{Binding SendPara.IsHex}"/>
 						<CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-									 Content="{Lan:Localize mvLoop}" Margin="10,0,0,10"
+									 Content="{Lan:Localize mwLoop}" Margin="10,0,0,10"
 									 VerticalAlignment="Stretch" 
 								    Name="chbLoop"  >
 							
@@ -217,8 +217,10 @@
 						 VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
 						 TextWrapping="Wrap" Text="{Binding Path=ReceiveTxt}" 
 						 />
-				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-							TextWrapping="Wrap"
+				<TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,5,5" 
+						 
+						 ScrollViewer.VerticalScrollBarVisibility="Auto"
+							TextWrapping="Wrap" 
 						 Text="{Binding SendTxt}"
 						 />
 				<ComboBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,5,5"

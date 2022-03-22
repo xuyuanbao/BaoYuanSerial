@@ -6,6 +6,10 @@ Welcome to use the BaoYuanSerial that is a GUI serial debug tool for Linux(Ubunt
 My Avalonia QQ Group: 724430960
   
 Welcome to join QQ group discussion
+
+Windows Edition
+----
+https://gitee.com/LvYiWuHen/byserial  
   
 Eenvironment
 ----

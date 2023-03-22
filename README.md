@@ -22,12 +22,6 @@ Using
 ----
 AvaloniaUI  https://github.com/AvaloniaUI  
 
-Install .Net In Linux  
-https://docs.microsoft.com/zh-cn/dotnet/core/install/linux  
-
-Create an Ubuntu program Desktop Icon article  
-https://blog.csdn.net/lvyiwuhen/article/details/117579011
-
 Manual
 ----
 ubuntu 手动创建快捷图标 并赋予root权限免密  
@@ -35,6 +29,10 @@ https://blog.csdn.net/lvyiwuhen/article/details/117579011
   
 开源 串口调试助手 BaoYuanSerial 使用教程  
 https://blog.csdn.net/lvyiwuhen/article/details/119849207  
+
+Install .Net In Linux  
+https://docs.microsoft.com/zh-cn/dotnet/core/install/linux  
+
 
 更新
 ----

@@ -28,6 +28,14 @@ https://docs.microsoft.com/zh-cn/dotnet/core/install/linux
 Create an Ubuntu program Desktop Icon article  
 https://blog.csdn.net/lvyiwuhen/article/details/117579011
 
+Manual
+----
+ubuntu 手动创建快捷图标 并赋予root权限免密  
+https://blog.csdn.net/lvyiwuhen/article/details/117579011  
+  
+开源 串口调试助手 BaoYuanSerial 使用教程  
+https://blog.csdn.net/lvyiwuhen/article/details/119849207  
+
 更新
 ----
 2021-08-14 V1.1  
